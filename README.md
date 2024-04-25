@@ -11,61 +11,61 @@
 
 Tài liệu này cung cấp hướng dẫn sử dụng các câu lệnh Artisan cơ bản trong Laravel để thực hiện các tác vụ phổ biến như tạo dự án, quản lý cơ sở dữ liệu, tối ưu hóa hiệu suất và tạo mã.
 
-**1. Hiển thị phiên bản Laravel:**
+### **1. Hiển thị phiên bản Laravel:**
 
 ```bash
 php artisan --version
 ```
 
-**2. Tạo dự án Laravel mới:**
+### **2. Tạo dự án Laravel mới:**
 
 ```bash
 php artisan make:project project-name
 ```
 
-**3. Tạo khóa ứng dụng Laravel:**
+### **3. Tạo khóa ứng dụng Laravel:**
 
 ```bash
 php artisan key:generate
 ```
 
-**4. Cập nhật Laravel:**
+### **4. Cập nhật Laravel:**
 
 ```bash
 php artisan composer update
 ```
 
-**5. Khởi động máy chủ web:**
+### **5. Khởi động máy chủ web:**
 
 ```bash
 php artisan serve
 ```
 
-**6. Tạo cấu trúc cơ sở dữ liệu:**
+### **6. Tạo cấu trúc cơ sở dữ liệu:**
 
 ```bash
 php artisan migrate
 ```
 
-**7. Xóa và tạo lại CSDL khi có thay đổi code-CSDL:**
+### **7. Xóa và tạo lại CSDL khi có thay đổi code-CSDL:**
 
 ```bash
 php artisan migrate:refresh
 ```
 
-**8. Chạy lại Laravel khi có sự thay đổi code:**
+### **8. Chạy lại Laravel khi có sự thay đổi code:**
 
 ```bash
 php artisan optimize
 ```
 
-**9. Tạo một bộ điều khiển mới:**
+### **9. Tạo một bộ điều khiển mới:**
 
 ```bash
 php artisan make:controller controller-name
 ```
 
-**Lưu ý:**
+### **Lưu ý:**
 
 * Thay thế `project-name` bằng tên dự án của bạn.
 * Thay thế `controller-name` bằng tên bộ điều khiển bạn muốn tạo.
