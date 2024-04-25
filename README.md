@@ -30,7 +30,7 @@ php artisan key:generate
 ### **4. Cập nhật Laravel:**
 
 ```bash
-php artisan composer update
+composer update
 ```
 
 ### **5. Khởi động máy chủ web:**
