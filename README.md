@@ -45,7 +45,7 @@ php artisan serve
 php artisan migrate
 ```
 
-### **7. Xóa và tạo lại CSDL khi có thay đổi code-CSDL:**
+### **7. Chạy lại khi có thay đổi code-CSDL:**
 
 ```bash
 php artisan migrate:refresh
