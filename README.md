@@ -51,6 +51,12 @@ php artisan migrate
 php artisan migrate:refresh
 ```
 
+### **7. Thêm dữ liệu mẫu vào CSDL:**
+
+```bash
+php artisan db:seed --class=seed-data.php
+```
+
 ### **8. Chạy lại Laravel khi có sự thay đổi code:**
 
 ```bash
