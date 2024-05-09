@@ -1,4 +1,5 @@
 # Build and Release Folders
+vender/
 bin-debug/
 bin-release/
 [Oo]bj/
