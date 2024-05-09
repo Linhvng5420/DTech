@@ -1,5 +1,5 @@
 # Build and Release Folders
-vendor/
+vendor
 bin-debug/
 bin-release/
 [Oo]bj/
