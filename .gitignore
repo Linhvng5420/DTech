@@ -62,6 +62,8 @@ Homestead.json
 
 # PhpStorm project files
 .idea
+.idea/
+/.idea/
 
 # JSON Web Tokens
 /storage/jwt/
