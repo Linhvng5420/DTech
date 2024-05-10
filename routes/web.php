@@ -14,7 +14,7 @@ use App\Http\Controllers\CrudUserController;
 |
 */
 
-//navbar-footer
+//Navbar-Footer
 Route::get('dashboard', [CrudUserController::class, 'dashboard']);
 
 //CRUD

@@ -1,19 +1,67 @@
-# Build and Release Folders
-vender/
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+/vendor/
+/node_modules/
 
-# Other files and folders
-.settings/
+/public/hot
+/public/storage
+/storage/*.key
+/storage/debugbar/
+/storage/framework/cache/data/*
+/storage/framework/sessions/
+/storage/framework/testing/
+/storage/framework/views/
+/storage/logs/
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+/bootstrap/cache/*.php
+/bootstrap/cache/*.json
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+
+.env.backup
+.env.local
+.env.*.local
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+.DS_Store
+Thumbs.db
+.idea/
+.php_cs.cache
+.phpunit.result.cache
+.vscode/
+_scss-cache/
+
+# Local by Flywheel files
+/local-data/
+
+# Windows thumbnail cache
+Thumbs.db
+
+# MacOS folder attributes
+.DS_Store
+
+# MacOS Icon?
+Icon?
+
+# Composer files
+/composer.phar
+/vendor/
+composer.lock
+
+# Laravel 5+ specific
+node_modules/
+npm-debug.log
+yarn-error.log
+.env.*
+Homestead.yaml
+Homestead.json
+/.vagrant
+/_ide_helper.php
+/.phpunit.result.cache
+
+# PhpStorm project files
+.idea
+
+# JSON Web Tokens
+/storage/jwt/

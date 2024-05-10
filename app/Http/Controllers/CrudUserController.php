@@ -25,9 +25,18 @@ class CrudUserController extends Controller
 
         $credentials = $request->only('username', 'password');
 
+//        if (Auth::attempt($credentials)) {
+//            return redirect()->intended('list')
+//                ->withSuccess('Đăng nhập thành công');
+//        }
+
+        //admin -> crud, other-user -> home-page
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('list')
-                ->withSuccess('Đăng nhập thành công');
+            if ($request->role === 'admin') {
+                return redirect('list')->withSuccess('Admin Đăng nhập thành công');
+            } else {
+                return redirect('home')->withSuccess('User Đăng nhập thành công');
+            }
         }
 
         return redirect("login")->withSuccess('Đăng Nhập Thất Bại!');
@@ -128,10 +137,10 @@ class CrudUserController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-    
+
         $request->session()->invalidate(); // Invalidate session data for extra security
-    
+
         return redirect('login')->with('success', 'Đăng xuất thành công');
     }
-    
+
 }
