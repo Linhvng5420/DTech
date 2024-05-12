@@ -1,67 +1,24 @@
-/vendor/
-/node_modules/
-
-/public/hot
-/public/storage
-/storage/*.key
-/storage/debugbar/
-/storage/framework/cache/data/*
-/storage/framework/sessions/
-/storage/framework/testing/
-/storage/framework/views/
-/storage/logs/
-
-/bootstrap/cache/*.php
-/bootstrap/cache/*.json
-
-
-.env.backup
-.env.local
-.env.*.local
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-
-.DS_Store
-Thumbs.db
-.idea/
-.php_cs.cache
-.phpunit.result.cache
-.vscode/
-_scss-cache/
-
-# Local by Flywheel files
-/local-data/
-
-# Windows thumbnail cache
-Thumbs.db
-
-# MacOS folder attributes
-.DS_Store
-
-# MacOS Icon?
-Icon?
-
-# Composer files
-/composer.phar
-/vendor/
-composer.lock
-
-# Laravel 5+ specific
+vendor
 node_modules/
 npm-debug.log
 yarn-error.log
-.env.*
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+
+storage/*.key
 Homestead.yaml
 Homestead.json
 /.vagrant
-/_ide_helper.php
-/.phpunit.result.cache
+.phpunit.result.cache
 
-# PhpStorm project files
 .idea
-
-# JSON Web Tokens
-/storage/jwt/
