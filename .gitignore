@@ -1,18 +1,24 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+vendor
+node_modules/
+npm-debug.log
+yarn-error.log
 
-# Other files and folders
-.settings/
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+
+storage/*.key
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
+
+.idea
