@@ -44,7 +44,7 @@
 
   <nav class="navbar">
     <a href="#">Đăng Nhập</a>
-    <a href="{{ route('signup') }}">Đăng Ký</a>
+    <a href="#">Đăng Ký</a>
   </nav>
 
   <div class="content-yield">
