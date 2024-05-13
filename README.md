@@ -13,10 +13,12 @@ composer update
 php artisan optimize
 ```
 
-### **CTDL:**
-
+## **CSDL**
 ```bash
 php artisan migrate
+```
+```bash
+php artisan migrate:fresh
 ```
 ```bash
 php artisan migrate:refresh
@@ -24,13 +26,12 @@ php artisan migrate:refresh
 ```bash
 php artisan migrate:rollback
 ```
+
+## **SEEDER**
 ```bash
-php artisan db:seed --class=data
-```
-### Make Seed:
-```bash
-php artisan make:seed 
+php artisan make:seed
 ```
 ```bash
 php artisan db:seed
 ```
+
