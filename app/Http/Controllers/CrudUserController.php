@@ -10,41 +10,26 @@ use Illuminate\Support\Facades\Auth;
 
 class CrudUserController extends Controller
 {
-    // Đăng ký
-    public function signup()
+    // Đăng Nhập
+    public function login()
     {
-        return view('crud.signup');
+        return view('crud.login');
     }
 
-    public function postUser(Request $request)
+    public function authUser(Request $request)
     {
         $request->validate([
-            'username' => 'required|unique:users',
-            'email' => 'required|email|unique:users',
-            'password1' => 'required|min:4',
-            'password2' => 'required|min:4|same:password1', // xác thực p2 = p1
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:6144', // kiểm tra ảnh avatar
+            'username' => 'required',
+            'password' => 'required',
         ]);
 
-        $data = $request->all();
+        $credentials = $request->only('username', 'password');
 
-        // Avatar upload
-        if($request->hasFile('avatar')){
-            $imageName = time().'.'.$request->avatar->extension();
-
-            $request->avatar->move(public_path('images'), $imageName);
-
-            $data['profile_image'] = $imageName;
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('Home')
+                ->withSuccess('Đăng nhập thành công');
         }
 
-        $check = User::create([
-            'username' => $data['username'],
-            'email' => $data['email'],
-            'profile_image' => $data['profile_image'],
-            'password' => Hash::make($data['password1'])
-        ]);
-
-        return redirect("#")->withSuccess('Đăng ký thành công');
+        return redirect("login")->withSuccess('Đăng Nhập Thất Bại!');
     }
-
 }

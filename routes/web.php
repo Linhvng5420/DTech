@@ -14,7 +14,7 @@ use App\Http\Controllers\CrudUserController;
 |
 */
 
-Route::get('dashboard', [CrudUserController::class, 'dashboard']);
+//Route::get('dashboard', [CrudUserController::class, 'dashboard']);
 
 Route::get('/', function () {
     return view('dashboard');
