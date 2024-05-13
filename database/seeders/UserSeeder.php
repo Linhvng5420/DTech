@@ -1,6 +1,8 @@
 <?php
 
 namespace Database\Seeders;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -46,7 +48,7 @@ class UserSeeder extends Seeder
         ];
 
         foreach ($users as $user) {
-            User::create($user);
+            DB::table('users')->insert($user);
         }
     }
 }
