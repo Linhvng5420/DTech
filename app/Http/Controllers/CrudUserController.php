@@ -19,7 +19,7 @@ class CrudUserController extends Controller
     public function postUser(Request $request)
     {
         $request->validate([
-            'username' => 'required',
+            'username' => 'required|unique:users',
             'email' => 'required|email|unique:users',
             'password1' => 'required|min:4',
             'password2' => 'required|min:4|same:password1', // xác thực p2 = p1
