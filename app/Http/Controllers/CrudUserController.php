@@ -23,15 +23,26 @@ class CrudUserController extends Controller
             'email' => 'required|email|unique:users',
             'password1' => 'required|min:4',
             'password2' => 'required|min:4|same:password1', // xác thực p2=p1
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:6144', // Validation for image
         ]);
 
         $data = $request->all();
+
+        // Handle avatar upload
+        $imagePath = null;
+        if ($request->hasFile('avatar')) {
+            $image = $request->file('avatar');
+            $imagePath = $image->store('public/avatars'); // Store in avatars folder
+        }
+
         $check = User::create([
             'username' => $data['username'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password1'])
+            'password' => Hash::make($data['password1']),
+            'profile_image' => $imagePath, // Set image path
         ]);
 
         return redirect("login")->withSuccess('Đăng Ký thành công');
     }
+
 }
