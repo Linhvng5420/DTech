@@ -37,6 +37,11 @@
       border: 1px solid black;
       justify-items: center;
     }
+
+    .content-yield {
+        display: grid;
+        justify-content: center;
+    }
   </style>
 </head>
 
