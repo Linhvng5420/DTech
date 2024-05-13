@@ -23,7 +23,7 @@ class CrudUserController extends Controller
             'email' => 'required|email|unique:users',
             'password1' => 'required|min:4',
             'password2' => 'required|min:4|same:password1', // xác thực p2=p1
-            'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:6144', // Validation for image
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:6144',
         ]);
 
         $data = $request->all();

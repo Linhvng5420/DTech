@@ -6,7 +6,7 @@
         <div class="card-title">
             <h1>Màn Hình Đăng Ký</h1>
         </div>
-        <form method="POST" action="{{ route('user.postUser') }}" class="card-body">
+        <form method="POST" action="{{ route('user.postUser') }}" class="card-body" enctype="multipart/form-data">
             @csrf
             <div class="input-group">
                 <label for="username">Username</label>
@@ -30,7 +30,7 @@
 
             <div class="input-group">
                 <label for="avatar">Avatar</label>
-                <input type="file" id="avatar" name="avatar">
+                <input type="file" id="avatar" name="avatar" required>
             </div>
 
             <div style="text-align: center;">
