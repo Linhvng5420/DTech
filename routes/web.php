@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CrudUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('dashboard', [CrudUserController::class, 'dashboard']);
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
