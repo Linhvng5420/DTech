@@ -4,7 +4,7 @@
 <section class="login-form">
     <div class="card-login">
         <div class="card-title">
-            <h1>Màn hình đăng ký</h1>
+            <h1>Màn Hình Đăng Ký</h1>
         </div>
         <form method="POST" action="{{ route('user.postUser') }}" class="card-body">
             @csrf

@@ -28,18 +28,18 @@ class CrudUserController extends Controller
 
         $data = $request->all();
 
-        // Handle avatar upload
+        // Avatar upload
         $imagePath = null;
         if ($request->hasFile('avatar')) {
             $image = $request->file('avatar');
-            $imagePath = $image->store('public/avatars'); // Store in avatars folder
+            $imagePath = $image->store('public/images');
         }
 
         $check = User::create([
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password1']),
-            'profile_image' => $imagePath, // Set image path
+            'profile_image' => $imagePath,
         ]);
 
         return redirect("login")->withSuccess('Đăng Ký thành công');
