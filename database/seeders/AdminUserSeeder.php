@@ -18,7 +18,7 @@ class AdminUserSeeder extends Seeder
             'username' => 'admin',
             'email' => 'admin@tdc.vn',
             'password' => Hash::make('1234'),
-            'profile_image' => null,
+            'role' => 'admin'
         ]);
     }
 }
