@@ -38,7 +38,7 @@
             </div>
 
             <div>
-                <a href="{{ route('login') }}" class="login">Đã Có Tài Khoản</a>
+                <a href="#" class="login">Đã Có Tài Khoản</a>
             </div>
         </form>
     </div>

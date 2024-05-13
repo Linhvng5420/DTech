@@ -43,7 +43,7 @@
 <body>
 
   <nav class="navbar">
-    <a href="{{ route('login') }}">Đăng Nhập</a>
+    <a href="#">Đăng Nhập</a>
     <a href="{{ route('signup') }}">Đăng Ký</a>
   </nav>
 
