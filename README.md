@@ -22,5 +22,11 @@ php artisan migrate
 php artisan migrate:refresh
 ```
 ```bash
+php artisan migrate:rollback
+```
+```bash
 php artisan db:seed --class=data
+```
+```bash
+php artisan db:seed
 ```
