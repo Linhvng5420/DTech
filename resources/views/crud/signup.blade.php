@@ -28,6 +28,11 @@
                 <input type="password" id="password2" name="password2" required>
             </div>
 
+            <div class="input-group">
+                <label for="avatar">Avatar</label>
+                <input type="file" id="avatar" name="avatar">
+            </div>
+
             <div style="text-align: center;">
                 <button type="submit" class="btn-signup">Đăng Ký</button>
             </div>
