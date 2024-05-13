@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('desktop', function (Blueprint $table) {
             $table->id();
             $table->string('TenSP');
-            $table->string('HinhAnh')->nullable(); // cho phép giá trị null
+            $table->string('HinhAnh')->nullable();
             $table->string('MauSac');
             $table->integer('Gia');
             $table->integer('Ram');
             $table->integer('Rom');
-            $table->text('MieuTa')->nullable(); // cho phép giá trị null
+            $table->text('MieuTa')->nullable();
             $table->string('Hang');
             $table->timestamps();
         });

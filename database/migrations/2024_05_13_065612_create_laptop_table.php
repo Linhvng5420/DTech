@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('laptop', function (Blueprint $table) {
             $table->id();
             $table->string('TenSP');
-            $table->string('HinhAnh');
+            $table->string('HinhAnh')->nullable();
             $table->string('MauSac');
             $table->integer('Gia');
             $table->integer('Ram')->nullable();

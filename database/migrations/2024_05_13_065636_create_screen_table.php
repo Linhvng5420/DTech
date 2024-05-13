@@ -14,13 +14,11 @@ return new class extends Migration
         Schema::create('screen', function (Blueprint $table) {
             $table->id();
             $table->string('TenSP');
-            $table->string('HinhAnh');
+            $table->string('HinhAnh')->nullable();
             $table->string('MauSac');
             $table->integer('Gia');
-            $table->integer('Ram')->nullable();
-            $table->integer('Rom')->nullable();
             $table->integer('KichThuoc')->nullable();
-            $table->string('MieuTa');
+            $table->string('MieuTa')->nullable();
             $table->string('Hang');
             $table->timestamps();
         });

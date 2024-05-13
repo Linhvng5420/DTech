@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('mouse', function (Blueprint $table) {
             $table->id();
             $table->string('TenSP');
-            $table->string('HinhAnh');
+            $table->string('HinhAnh')->nullable();
             $table->string('MauSac');
             $table->integer('Gia');
-            $table->string('MieuTa');
+            $table->string('MieuTa')->nullable();
             $table->string('Hang');
             $table->timestamps();
         });
