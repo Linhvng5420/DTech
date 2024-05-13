@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use http\Client\Curl\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +23,11 @@ class DatabaseSeeder extends Seeder
         // Seed
         $this->call(AdminUserSeeder::class);
         $this->call(UserSeeder::class);
-
+        $this->call(BrandSeeder::class);
+        $this->call(DesktopSeeder::class);
+        $this->call(LaptopSeeder::class);
+        $this->call(MouseSeeder::class);
+        $this->call(PhoneSeeder::class);
+        $this->call(ScreenSeeder::class);
     }
 }
