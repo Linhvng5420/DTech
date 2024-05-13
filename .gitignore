@@ -22,3 +22,5 @@ Homestead.json
 .phpunit.result.cache
 
 .idea
+public/uploads
+public/images
