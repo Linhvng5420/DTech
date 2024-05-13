@@ -27,6 +27,10 @@ php artisan migrate:rollback
 ```bash
 php artisan db:seed --class=data
 ```
+### Make Seed:
+```bash
+php artisan make:seed 
+```
 ```bash
 php artisan db:seed
 ```
