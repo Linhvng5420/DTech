@@ -14,11 +14,10 @@ use App\Http\Controllers\CrudUserController;
 |
 */
 
-Route::get('dashboard', [CrudUserController::class, 'dashboard']);
-
+// Sign Up
 Route::get('signup', [CrudUserController::class, 'signup'])->name('signup');
 Route::post('signup', [CrudUserController::class, 'postUser'])->name('user.postUser');
 
 Route::get('/', function () {
-    return view('crud.signup');
+    return view('welcome');
 });
