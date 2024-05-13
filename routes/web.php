@@ -15,7 +15,9 @@ use App\Http\Controllers\CrudUserController;
 */
 
 //Route::get('dashboard', [CrudUserController::class, 'dashboard']);
+Route::get('login', [CrudUserController::class, 'login'])->name('login');
+Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('crud.login');
 });
