@@ -8,7 +8,7 @@
             <div class="success-message">{{ session('success') }}</div>
         @endif
 
-        <form action="{{ route('earphones.store') }}" method="POST">
+        <form action="{{ route('earphones.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="TenSP">Tên Sản Phẩm:</label>
@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label for="HinhAnh">Hình Ảnh:</label>
-                <input type="text" id="HinhAnh" name="HinhAnh">
+                <input type="file" id="HinhAnh" name="HinhAnh">
             </div>
             <div class="form-group">
                 <label for="MauSac">Màu Sắc:</label>

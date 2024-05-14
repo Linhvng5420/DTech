@@ -28,6 +28,6 @@ class EarPhoneController extends Controller
 
         EarPhone::create($data);
 
-        return redirect()->back()->with('success', '==> Sản phẩm EarPhone đã được thêm thành công!');
+        return redirect()->back()->with('success', '[OK] Sản phẩm EarPhone đã được thêm thành công!');
     }
 }
