@@ -32,4 +32,41 @@ class CrudUserController extends Controller
 
         return redirect("login")->withSuccess('Đăng Nhập Thất Bại!');
     }
+
+    // Đăng Ký
+    public function signup()
+    {
+        return view('crud.signup');
+    }
+
+    public function postUser(Request $request)
+    {
+        $request->validate([
+            'username' => 'required|unique:users',
+            'email' => 'required|email|unique:users',
+            'password1' => 'required|min:4',
+            'password2' => 'required|min:4|same:password1', // xác thực p2 = p1
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:6144', // kiểm tra ảnh avatar
+        ]);
+
+        $data = $request->all();
+
+        // Avatar upload
+        if($request->hasFile('avatar')){
+            $imageName = time().'.'.$request->avatar->extension();
+
+            $request->avatar->move(public_path('images'), $imageName);
+
+            $data['profile_image'] = $imageName;
+        }
+
+        $check = User::create([
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'profile_image' => $data['profile_image'],
+            'password' => Hash::make($data['password1'])
+        ]);
+
+        return redirect("#")->withSuccess('Đăng ký thành công');
+    }
 }
