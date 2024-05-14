@@ -14,7 +14,18 @@ class DesktopController extends Controller
 
     public function store(Request $request)
     {
-        Desktop::create($request->all());
+        $data = $request->all();
+
+        if ($request->hasFile('HinhAnh')) {
+            $filename = $request->HinhAnh->getClientOriginalName();
+
+            $request->HinhAnh->storeAs('public/images', $filename);
+
+            $data['HinhAnh'] = $filename;
+        }
+
+        Desktop::create($data);
+
         return back()->with('success', '[OK] Desktop mới đã được thêm thành công!');
     }
 }
