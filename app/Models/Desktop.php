@@ -9,5 +9,7 @@ class Desktop extends Model
 {
     use HasFactory;
 
+    protected $table = 'desktop';
+
     protected $fillable = ['TenSP', 'HinhAnh', 'MauSac', 'Gia', 'Ram', 'Rom', 'MieuTa', 'Hang'];
 }
