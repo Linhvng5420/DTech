@@ -47,7 +47,7 @@ class PhoneController extends Controller
         $phone->Ram = $request->input('Ram');
         $phone->Rom = $request->input('Rom');
         $phone->Hang = $request->input('Hang');
-        $phone->MieuTa = $request->input('MieuTa', '');// Đặt giá trị mặc định nếu không có giá trị được cung cấp
+        $phone->MieuTa = $request->input('MieuTa', ''); // Đặt giá trị mặc định nếu không có giá trị được cung cấp
 
         if ($request->hasFile('HinhAnh')) {
             $anhcu = 'uploads/phone/' . $phone->HinhAnh;
@@ -67,7 +67,7 @@ class PhoneController extends Controller
 
     public function index()
     {
-        $phones = Phone::all(); // Đặt tên biến là $phones
+        $phones = Phone::paginate(3); // Số lượng sản phẩm mỗi trang là 10, bạn có thể thay đổi số này nếu cần
         return view('phone.index', compact('phones'));
     }
 
