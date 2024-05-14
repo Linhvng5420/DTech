@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DesktopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Desktop
+Route::get('/desktops/create', [DesktopController::class, 'create']);
+Route::post('/desktops', [DesktopController::class, 'store'])->name('desktops.store');
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('adddesktop');
 });
