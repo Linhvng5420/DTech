@@ -19,6 +19,6 @@ class EarPhoneController extends Controller
         $product->Hang = $request->input('Hang');
         $product->save();
 
-        return redirect('/products');
+        return redirect('/earphone');
     }
 }

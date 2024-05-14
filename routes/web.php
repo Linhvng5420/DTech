@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Earphone
-Route::post('/products', 'EarPhoneController@addearphone');
+Route::post('/earphone', 'EarPhoneController@addearphone');
 
 Route::get('/', function () {
     return view();
