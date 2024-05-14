@@ -16,8 +16,18 @@ class EarPhoneController extends Controller
     // Lưu sản phẩm mới
     public function store(Request $request)
     {
-        EarPhone::create($request->all());
+        $data = $request->all();
 
-        return redirect()->back()->with('success', 'Sản phẩm EarPhone đã được thêm thành công!');
+        if ($request->hasFile('HinhAnh')) {
+            $filename = $request->HinhAnh->getClientOriginalName();
+
+            $request->HinhAnh->storeAs('public/images', $filename);
+
+            $data['HinhAnh'] = $filename;
+        }
+
+        EarPhone::create($data);
+
+        return redirect()->back()->with('success', '==> Sản phẩm EarPhone đã được thêm thành công!');
     }
 }
