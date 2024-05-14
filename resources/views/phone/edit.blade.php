@@ -22,7 +22,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('phone.edit', ['id' => $phone->id]) }}" class="btn btn-danger float-end">Quay lại</a>
+                    <a href="{{ route('phone.all', ['id' => $phone->id]) }}" class="btn btn-danger float-end">Quay lại</a>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('phone.update', ['id' => $phone->id]) }}" method="post" enctype="multipart/form-data">

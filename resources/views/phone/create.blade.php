@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="card">
                 <div class="card-header">
-                        <h3>Thêm Phone<a href="{{ route('phone.store')}}" class="btn btn-danger float-end">Quay lại</a></h3>
+                        <h3>Thêm Phone<a href="{{ route('phone.all')}}" class="btn btn-danger float-end">Quay lại</a></h3>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('phone.store') }}" method="post" enctype="multipart/form-data">
