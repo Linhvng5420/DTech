@@ -1,7 +1,7 @@
 @extends('dashboard')
 
 @section('content')
-    <form method="POST" action="/products">
+    <form method="POST" action="/earphone">
         @csrf
         <label for="MaSP">Mã sản phẩm:</label>
         <input type="text" id="MaSP" name="MaSP" required>
