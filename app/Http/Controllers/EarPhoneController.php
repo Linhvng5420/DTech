@@ -3,22 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\EarPhone;
 
 class EarPhoneController extends Controller
 {
-    // Add Earphone
-    public function addEarphone(Request $request)
+    // Hiển thị form thêm sản phẩm
+    public function create()
     {
-        $product = new Product();
-        $product->MaSP = $request->input('MaSP');
-        $product->TenSP = $request->input('TenSP');
-        $product->MauSac = $request->input('MauSac');
-        $product->Gia = $request->input('Gia');
-        $product->MieuTa = $request->input('MieuTa');
-        $product->HinhAnh = $request->input('HinhAnh');
-        $product->Hang = $request->input('Hang');
-        $product->save();
+        return view('earphones.create');
+    }
 
-        return redirect('/earphone');
+    // Lưu sản phẩm mới
+    public function store(Request $request)
+    {
+        EarPhone::create($request->all());
+
+        return redirect()->back()->with('success', 'Sản phẩm EarPhone đã được thêm thành công!');
     }
 }
