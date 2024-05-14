@@ -9,7 +9,7 @@ class DesktopController extends Controller
 {
     public function create()
     {
-        return view('desktops.create');
+        return view('desktop.create');
     }
 
     public function store(Request $request)

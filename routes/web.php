@@ -15,8 +15,8 @@ use App\Http\Controllers\DesktopController;
 */
 
 // Desktop
-Route::get('/desktops/create', [DesktopController::class, 'create']);
-Route::post('/desktops', [DesktopController::class, 'store'])->name('desktops.store');
+Route::get('/desktop/create', [DesktopController::class, 'create']);
+Route::post('/desktop', [DesktopController::class, 'store'])->name('desktop.store');
 
 Route::get('/', function () {
     return view('adddesktop');
