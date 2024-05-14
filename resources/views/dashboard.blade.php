@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     @stack('styles')
-  <style>
+    <style>
     body {
       font-family: Arial, sans-serif;
     }
@@ -14,7 +15,7 @@
       display: flex;
       justify-content: center;
       padding: 5px 0;
-      margin: 0 5%;
+      margin: 0 5% 2% 5%;
       border: 1px solid black;
     }
 
@@ -52,6 +53,8 @@
     <a href="#">Đăng Nhập</a>
     <a href="#">Đăng Ký</a>
   </nav>
+
+  @include('nav')
 
   <div class="content-yield">
     @yield('content')
