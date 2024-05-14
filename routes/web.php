@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EarPhoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Earphone
-Route::post('/earphone', 'EarPhoneController@addearphone');
+Route::get('/earphones/create', [EarPhoneController::class, 'create']);
+Route::post('/earphones', [EarPhoneController::class, 'store'])->name('earphones.store');
 
 Route::get('/', function () {
     return view();

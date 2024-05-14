@@ -1,14 +1,21 @@
 @extends('dashboard')
 
 @section('content')
-    <form method="POST" action="/earphone">
+    <h1>Thêm Sản Phẩm EarPhone</h1>
+
+    @if (session('success'))
+        <div>{{ session('success') }}</div>
+    @endif
+
+    <form action="{{ route('earphones.store') }}" method="POST">
         @csrf
-        <label for="MaSP">Mã sản phẩm:</label>
-        <input type="text" id="MaSP" name="MaSP" required>
+        Tên Sản Phẩm: <input type="text" name="TenSP" required><br>
+        Hình Ảnh: <input type="text" name="HinhAnh"><br>
+        Màu Sắc: <input type="text" name="MauSac" required><br>
+        Giá: <input type="number" name="Gia" required><br>
+        Miêu Tả: <textarea name="MieuTa"></textarea><br>
+        Hãng: <input type="text" name="Hang" required><br>
 
-        <label for="TenSP">Tên sản phẩm:</label>
-        <input type="text" id="TenSP" name="TenSP" required>
-
-        <button type="submit">Submit</button>
+        <button type="submit">Thêm Sản Phẩm</button>
     </form>
 @endsection
