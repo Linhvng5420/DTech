@@ -19,5 +19,5 @@ Route::get('/earphones/create', [EarPhoneController::class, 'create']);
 Route::post('/earphones', [EarPhoneController::class, 'store'])->name('earphones.store');
 
 Route::get('/', function () {
-    return view();
+    return view('addearphone');
 });
