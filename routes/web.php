@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
+use App\Http\Controllers\ListProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ Route::post('signup', [CrudUserController::class, 'postUser'])->name('user.postU
 // Login
 Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
+
+// List Products
+Route::get('/listproducts', [ListProductsController::class, 'showLaptops'])->name('laptops.list');
 
 Route::get('/', function () {
     return view('welcome');
