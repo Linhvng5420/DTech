@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 use App\Models\Laptop;
 use App\Models\Phone;
+use App\Models\Desktop;
 
 use Illuminate\Http\Request;
 
 class ListProductsController extends Controller
 {
-    public function showProducts() {
-        $laptops = Laptop::paginate(5);
-//        return view('listproducts', compact('laptops'));
+    public function showNavListProducts()
+    {
+        return view('navlistproducts');
+    }
 
-        $phones = Phone::paginate(5);
-        return view('listproducts', compact('phones', 'laptops'));
+    public function index()
+    {
+        $phones = Phone::paginate(10); // Adjust pagination as needed
+        return view('listproducts', compact('phones'));
     }
 }

@@ -24,9 +24,9 @@ Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 
 // List Products
-Route::get('/listproducts', [ListProductsController::class, 'showProducts'])->name('laptops.list');
-Route::get('/listproducts', [ListProductsController::class, 'showProducts'])->name('phones.list');
+Route::get('/products', [ListProductsController::class, 'showNavListProducts'])->name('products.navlist');
+Route::get('/products/phone', [ListProductsController::class, 'index'])->name('products.phone');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
