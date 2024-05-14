@@ -24,7 +24,8 @@ Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 
 // List Products
-Route::get('/listproducts', [ListProductsController::class, 'showLaptops'])->name('laptops.list');
+Route::get('/listproducts', [ListProductsController::class, 'showProducts'])->name('laptops.list');
+Route::get('/listproducts', [ListProductsController::class, 'showProducts'])->name('phones.list');
 
 Route::get('/', function () {
     return view('welcome');
