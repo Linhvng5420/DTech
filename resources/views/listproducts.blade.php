@@ -19,7 +19,10 @@
         <div class="product-list">
             <!-- Phone -->
             <div id="phone">
-                <h1>PHONE</h1>
+                <div class="title-with-button">
+                    <h1>PHONE</h1>
+                    <button class="add-button">Thêm +</button>
+                </div>
                 <table>
                     <tr>
                         <th>MaSP</th>
@@ -58,7 +61,10 @@
 
             <!-- Laptop -->
             <div id="laptop">
-                <h1>LAPTOP</h1>
+                <div class="title-with-button">
+                    <h1>LAPTOP</h1>
+                    <button class="add-button">Thêm +</button>
+                </div>
                 <table>
                     <tr>
                         <th>MaSP</th>
@@ -207,6 +213,32 @@
 
         svg {
             height: 0px;
+        }
+
+        /* Button */
+        .title-with-button {
+            display: flex;
+            justify-content: space-between; /* Căn chỉnh tiêu đề và nút ở hai đầu */
+            align-items: center; /* Căn giữa theo chiều dọc */
+        }
+
+        .add-button {
+            width: 150px;
+            height: 40px;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 5px 10px; /* Padding xung quanh nội dung của nút */
+            background-color: limegreen; /* Màu nền */
+            color: white; /* Màu chữ */
+            border: none; /* Xóa viền */
+            border-radius: 5px; /* Làm tròn góc */
+            cursor: pointer; /* Hiển thị con trỏ như nút bấm */
+            text-align: center; /* Căn giữa chữ trong nút */
+            outline: none; /* Xóa đường viền focus mặc định */
+        }
+
+        .add-button:hover {
+            background-color: seagreen; /* Màu nền khi hover */
         }
     </style>
 
