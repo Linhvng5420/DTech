@@ -14,7 +14,48 @@
                 <li><a href="#screen">Screen</a></li>
             </ul>
         </div>
+
+        <!-- Table -->
         <div class="product-list">
+            <!-- Phone -->
+            <div id="phone">
+                <h1>PHONE</h1>
+                <table>
+                    <tr>
+                        <th>MaSP</th>
+                        <th>TenSP</th>
+                        <th>HinhAnh</th>
+                        <th>MauSac</th>
+                        <th>Gia</th>
+                        <th>Ram</th>
+                        <th>Rom</th>
+                        <th>MieuTa</th>
+                        <th>Hang</th>
+                    </tr>
+
+                    <!--Load danh sach san pham-->
+                    @foreach ($phones as $phone)
+                        <tr>
+                            <td>{{ $phone->id }}</td>
+                            <td>{{ $phone->TenSP }}</td>
+                            <td>{{ $phone->HinhAnh }}</td>
+                            <td>{{ $phone->MauSac }}</td>
+                            <td>{{ $phone->Gia }}</td>
+                            <td>{{ $phone->Ram }}</td>
+                            <td>{{ $phone->Rom }}</td>
+                            <td>{{ $phone->MieuTa }}</td>
+                            <td>{{ $phone->Hang }}</td>
+                        </tr>
+                    @endforeach
+                </table>
+
+                <div class="container">
+                    <div class="pagination-container">
+                        {!! $phones->links() !!}
+                    </div>
+                </div>
+            </div>
+
             <!-- Laptop -->
             <div id="laptop">
                 <h1>LAPTOP</h1>
@@ -54,6 +95,7 @@
                 </div>
 
             </div>
+
         </div>
     </div>
 
@@ -73,7 +115,8 @@
         }
         .container {
             display: flex;
-            min-height: 100vh;
+            min-height: 10px;
+            flex-direction: row-reverse;
         }
         .sidebar {
             width: 140px;
