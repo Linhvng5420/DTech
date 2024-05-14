@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CrudUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +17,5 @@ use App\Http\Controllers\CrudUserController;
 Route::post('/products', 'EarPhoneController@addearphone');
 
 Route::get('/', function () {
-    return view('wellcome');
+    return view('welcome');
 });
