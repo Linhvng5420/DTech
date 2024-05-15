@@ -22,39 +22,39 @@
 
                 <div class="card">
                     <div class="card-header">
-                    <a href="{{ route('laptop.all', ['id' => $laptop->id]) }}" class="btn btn-danger float-end">Quay lại</a>
+                    <a href="{{ route('desktop.all', ['id' => $desktop->id]) }}" class="btn btn-danger float-end">Quay lại</a>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('laptop.update', ['id' => $laptop->id]) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('desktop.update', ['id' => $desktop->id]) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mv-3">
                                 <label for="">Tên Sản Phẩm</label>
-                                <input type="text" name="TenSP" id="" value="{{$laptop->TenSP}}" class="form-control">
+                                <input type="text" name="TenSP" id="" value="{{$desktop->TenSP}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Màu Sắc</label>
-                                <input type="text" name="MauSac" id="" value="{{$laptop->MauSac}}" class="form-control">
+                                <input type="text" name="MauSac" id="" value="{{$desktop->MauSac}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Giá</label>
-                                <input type="text" name="Gia" id="" value="{{$laptop->Gia}}" class="form-control">
+                                <input type="text" name="Gia" id="" value="{{$desktop->Gia}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Ram</label>
-                                <input type="text" name="Ram" id="" value="{{$laptop->Ram}}" class="form-control">
+                                <input type="text" name="Ram" id="" value="{{$desktop->Ram}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Rom</label>
-                                <input type="text" name="Rom" id="" value="{{$laptop->Rom}}" class="form-control">
+                                <input type="text" name="Rom" id="" value="{{$desktop->Rom}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Hãng</label>
-                                <input type="text" name="Hang" id="" value="{{$laptop->Hang}}" class="form-control">
+                                <input type="text" name="Hang" id="" value="{{$desktop->Hang}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Ảnh</label>
                                 <input type="file" name="HinhAnh" id="" class="form-control">
-                                <img src="{{asset('uploads/laptop/'.$laptop->HinhAnh)}}" width="70px" height="70px" alt="Ảnh">
+                                <img src="{{asset('uploads/desktop/'.$desktop->HinhAnh)}}" width="70px" height="70px" alt="Ảnh">
                             </div>
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Cập nhật Sản Phẩm</button>

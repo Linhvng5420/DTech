@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h3>WASSASU Laravel</h3>
-                        <a href="{{ route('laptop.add') }}" class="btn btn-primary">Thêm lapTop</a>
+                        <a href="{{ route('desktop.add') }}" class="btn btn-primary">Thêm desktop</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
@@ -37,19 +37,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($laptops as $laptop)
+                                @foreach($desktops as $desktop)
                                 <tr>
-                                    <td>{{ $laptop->id }}</td>
-                                    <td>{{ $laptop->TenSP }}</td>
-                                    <td><img src="{{ asset('images/'.$laptop->HinhAnh) }}" width="70px" height="70px" alt="Ảnh sản phẩm"></td>
-                                    <td>{{ $laptop->MauSac }}</td>
-                                    <td>{{ $laptop->Gia }}</td>
-                                    <td>{{ $laptop->Ram }}</td>
-                                    <td>{{ $laptop->Rom }}</td>
-                                    <td>{{ $laptop->Hang }}</td>
+                                    <td>{{ $desktop->id }}</td>
+                                    <td>{{ $desktop->TenSP }}</td>
+                                    <td><img src="{{ asset('images/'.$desktop->HinhAnh) }}" width="70px" height="70px" alt="Ảnh sản phẩm"></td>
+                                    <td>{{ $desktop->MauSac }}</td>
+                                    <td>{{ $desktop->Gia }}</td>
+                                    <td>{{ $desktop->Ram }}</td>
+                                    <td>{{ $desktop->Rom }}</td>
+                                    <td>{{ $desktop->Hang }}</td>
                                     <td>
-                                        <a href="{{ route('laptop.edit', ['id' => $laptop->id]) }}" class="btn btn-primary btn-sm">Sửa</a>
-                                        <a href="{{ route('laptop.delete', ['id' => $laptop->id]) }}" class="btn btn-danger btn-sm">Xóa</a>
+                                        <a href="{{ route('desktop.edit', ['id' => $desktop->id]) }}" class="btn btn-primary btn-sm">Sửa</a>
+                                        <a href="{{ route('desktop.delete', ['id' => $desktop->id]) }}" class="btn btn-danger btn-sm">Xóa</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -59,16 +59,16 @@
                     <!-- Phân trang -->
                     <div class="card-footer d-flex justify-content-center">
                         <ul class="pagination pagination-sm">
-                            <li class="page-item {{ $laptops->previousPageUrl() ? '' : 'disabled' }}">
-                                <a class="page-link" href="{{ $laptops->previousPageUrl() }}">Previous</a>
+                            <li class="page-item {{ $desktops->previousPageUrl() ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $desktops->previousPageUrl() }}">Previous</a>
                             </li>
-                            @for ($i = 1; $i <= $laptops->lastPage(); $i++)
-                                <li class="page-item {{ $laptops->currentPage() == $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $laptops->url($i) }}">{{ $i }}</a>
+                            @for ($i = 1; $i <= $desktops->lastPage(); $i++)
+                                <li class="page-item {{ $desktops->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $desktops->url($i) }}">{{ $i }}</a>
                                 </li>
                                 @endfor
-                                <li class="page-item {{ $laptops->nextPageUrl() ? '' : 'disabled' }}">
-                                    <a class="page-link" href="{{ $laptops->nextPageUrl() }}">Next</a>
+                                <li class="page-item {{ $desktops->nextPageUrl() ? '' : 'disabled' }}">
+                                    <a class="page-link" href="{{ $desktops->nextPageUrl() }}">Next</a>
                                 </li>
                         </ul>
                     </div>
