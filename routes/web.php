@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\PhoneController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CrudUserController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PhoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,20 +25,22 @@ Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 
 // Home
-//Route::get('/home', [HomeController::class, 'index'])->name('products');
-Route::get('/', [HomeController::class, 'index'])->name('products'); //Đây là trang đầu tiên (Home)
-Route::get('/phones', [HomeController::class, 'showPhones'])->name('phones');
-Route::get('/laptops', [HomeController::class, 'showLaptops'])->name('laptops');
-Route::get('/desktops', [HomeController::class, 'showDesktops'])->name('desktops');
-Route::get('/mice', [HomeController::class, 'showMice'])->name('mice');
-Route::get('/earphones', [HomeController::class, 'showEarphones'])->name('earphones');
-Route::get('/screens', [HomeController::class, 'showScreens'])->name('screens');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/products/phones', [HomeController::class, 'showPhones'])->name('products.phones');
+Route::get('/products/laptops', [HomeController::class, 'showLaptops'])->name('products.laptops');
+Route::get('/products/desktops', [HomeController::class, 'showDesktops'])->name('products.desktops');
+Route::get('/products/mice', [HomeController::class, 'showMice'])->name('products.mice');
+Route::get('/products/earphones', [HomeController::class, 'showEarphones'])->name('products.earphones');
+Route::get('/products/screens', [HomeController::class, 'showScreens'])->name('products.screens');
 
 // CRUD
-Route::get('phones', [PhoneController::class, 'index'])->name('phone.all');
-Route::get('add-phones', [PhoneController::class, 'addphone'])->name('phone.add');
-Route::post('add-phones', [PhoneController::class, 'store'])->name('phone.store');
-Route::get('edit-phone/{id}', [PhoneController::class, 'edit'])->name('phone.edit');
-Route::post('update-phone/{id}', [PhoneController::class, 'update'])->name('phone.update');
-Route::get('phone/delete/{id}', [PhoneController::class, 'delete'])->name('phone.delete');
+Route::prefix('admin/phones')->group(function () {
+    Route::get('/', [PhoneController::class, 'index'])->name('admin.phone.index');
+    Route::get('/create', [PhoneController::class, 'addphone'])->name('admin.phone.create');
+    Route::post('/create', [PhoneController::class, 'store'])->name('admin.phone.store');
+    Route::get('/edit/{id}', [PhoneController::class, 'edit'])->name('admin.phone.edit');
+    Route::post('/update/{id}', [PhoneController::class, 'update'])->name('admin.phone.update');
+    Route::get('/delete/{id}', [PhoneController::class, 'delete'])->name('admin.phone.delete');
+});
+
 
