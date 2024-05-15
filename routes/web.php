@@ -22,3 +22,4 @@ Route::get('/desktops', [HomeController::class, 'showDesktops'])->name('desktops
 Route::get('/mice', [HomeController::class, 'showMice'])->name('mice');
 Route::get('/earphones', [HomeController::class, 'showEarphones'])->name('earphones');
 Route::get('/screens', [HomeController::class, 'showScreens'])->name('screens');
+Route::get('/search', [HomeController::class, 'search'])->name('search.products');
