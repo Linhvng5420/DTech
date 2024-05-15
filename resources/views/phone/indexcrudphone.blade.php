@@ -33,7 +33,8 @@
                                 <tr>
                                     <td>{{ $phone->id }}</td>
                                     <td>{{ $phone->TenSP }}</td>
-                                    <td><img src="{{ asset('images/'.$phone->HinhAnh) }}" width="70px" height="70px"
+                                    <td><img src="{{ asset('uploads/phone/' . $phone->HinhAnh) }}" width="70px"
+                                             height="70px"
                                              alt="Ảnh sản phẩm"></td>
                                     <td>{{ $phone->MauSac }}</td>
                                     <td>{{ $phone->Gia }}</td>

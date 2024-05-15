@@ -7,11 +7,11 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Thêm Phone<a href="{{ route('phone.all')}}" class="btn btn-danger float-end">Quay lại</a>
+                        <h3>Thêm Phone<a href="{{ route('admin.phone.index')}}" class="btn btn-danger float-end">Quay lại</a>
                         </h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('phone.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('admin.phone.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="">Tên Sản Phẩm</label>
@@ -19,7 +19,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">Giá</label>
-                                <input type="text" name="Gia" class="form-control">
+                                <input type="number" name="Gia" class="form-control">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">Hãng</label>
@@ -31,11 +31,11 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">RAM</label>
-                                <input type="text" name="Ram" class="form-control">
+                                <input type="number" name="Ram" class="form-control">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">ROM</label>
-                                <input type="text" name="Rom" class="form-control">
+                                <input type="number" name="Rom" class="form-control">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">Mô Tả</label>

@@ -11,11 +11,11 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('phone.all', ['id' => $phone->id]) }}" class="btn btn-danger float-end">Quay
+                        <a href="{{ route('admin.phone.index', ['id' => $phone->id]) }}" class="btn btn-danger float-end">Quay
                             lại</a>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('phone.update', ['id' => $phone->id]) }}" method="post"
+                        <form action="{{ route('admin.phone.update', ['id' => $phone->id]) }}" method="post"
                               enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mv-3">
@@ -28,15 +28,15 @@
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Giá</label>
-                                <input type="text" name="Gia" id="" value="{{$phone->Gia}}" class="form-control">
+                                <input type="number" name="Gia" id="" value="{{$phone->Gia}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Ram</label>
-                                <input type="text" name="Ram" id="" value="{{$phone->Ram}}" class="form-control">
+                                <input type="number" name="Ram" id="" value="{{$phone->Ram}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Rom</label>
-                                <input type="text" name="Rom" id="" value="{{$phone->Rom}}" class="form-control">
+                                <input type="number" name="Rom" id="" value="{{$phone->Rom}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Hãng</label>
