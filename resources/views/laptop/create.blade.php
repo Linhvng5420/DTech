@@ -18,10 +18,10 @@
             <div class="col-md-12">
                 <div class="card">
                 <div class="card-header">
-                        <h3>Thêm Phone<a href="{{ route('phone.all')}}" class="btn btn-danger float-end">Quay lại</a></h3>
+                        <h3>Thêm laptop<a href="{{ route('laptop.all')}}" class="btn btn-danger float-end">Quay lại</a></h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('phone.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('laptop.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="">Tên Sản Phẩm</label>

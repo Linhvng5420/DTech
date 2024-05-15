@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h3>WASSASU Laravel</h3>
-                        <a href="{{ route('phone.add') }}" class="btn btn-primary">Thêm Sản Phẩm</a>
+                        <a href="{{ route('laptop.add') }}" class="btn btn-primary">Thêm lapTop</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
@@ -37,19 +37,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($phones as $phone)
+                                @foreach($laptops as $laptop)
                                 <tr>
-                                    <td>{{ $phone->id }}</td>
-                                    <td>{{ $phone->TenSP }}</td>
-                                    <td><img src="{{ asset('uploads/phone/'.$phone->HinhAnh) }}" width="70px" height="70px" alt="Ảnh sản phẩm"></td>
-                                    <td>{{ $phone->MauSac }}</td>
-                                    <td>{{ $phone->Gia }}</td>
-                                    <td>{{ $phone->Ram }}</td>
-                                    <td>{{ $phone->Rom }}</td>
-                                    <td>{{ $phone->Hang }}</td>
+                                    <td>{{ $laptop->id }}</td>
+                                    <td>{{ $laptop->TenSP }}</td>
+                                    <td><img src="{{ asset('images/'.$laptop->HinhAnh) }}" width="70px" height="70px" alt="Ảnh sản phẩm"></td>
+                                    <td>{{ $laptop->MauSac }}</td>
+                                    <td>{{ $laptop->Gia }}</td>
+                                    <td>{{ $laptop->Ram }}</td>
+                                    <td>{{ $laptop->Rom }}</td>
+                                    <td>{{ $laptop->Hang }}</td>
                                     <td>
-                                        <a href="{{ route('phone.edit', ['id' => $phone->id]) }}" class="btn btn-primary btn-sm">Sửa</a>
-                                        <a href="{{ route('phone.delete', ['id' => $phone->id]) }}" class="btn btn-danger btn-sm">Xóa</a>
+                                        <a href="{{ route('laptop.edit', ['id' => $laptop->id]) }}" class="btn btn-primary btn-sm">Sửa</a>
+                                        <a href="{{ route('laptop.delete', ['id' => $laptop->id]) }}" class="btn btn-danger btn-sm">Xóa</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -59,16 +59,16 @@
                     <!-- Phân trang -->
                     <div class="card-footer d-flex justify-content-center">
                         <ul class="pagination pagination-sm">
-                            <li class="page-item {{ $phones->previousPageUrl() ? '' : 'disabled' }}">
-                                <a class="page-link" href="{{ $phones->previousPageUrl() }}">Previous</a>
+                            <li class="page-item {{ $laptops->previousPageUrl() ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $laptops->previousPageUrl() }}">Previous</a>
                             </li>
-                            @for ($i = 1; $i <= $phones->lastPage(); $i++)
-                                <li class="page-item {{ $phones->currentPage() == $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $phones->url($i) }}">{{ $i }}</a>
+                            @for ($i = 1; $i <= $laptops->lastPage(); $i++)
+                                <li class="page-item {{ $laptops->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $laptops->url($i) }}">{{ $i }}</a>
                                 </li>
                                 @endfor
-                                <li class="page-item {{ $phones->nextPageUrl() ? '' : 'disabled' }}">
-                                    <a class="page-link" href="{{ $phones->nextPageUrl() }}">Next</a>
+                                <li class="page-item {{ $laptops->nextPageUrl() ? '' : 'disabled' }}">
+                                    <a class="page-link" href="{{ $laptops->nextPageUrl() }}">Next</a>
                                 </li>
                         </ul>
                     </div>
