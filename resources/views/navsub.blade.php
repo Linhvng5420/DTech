@@ -26,9 +26,9 @@
             <!--Tìm Kiếm-->
             <li class="nav-item">
                 <form action="{{ route('search.products') }}" method="GET">
-                    <input class="form-control mr-sm-2 ml-5" type="search" placeholder="Tìm Kiếm..." aria-label="Search"
+                    <input type="search" placeholder="Tìm Kiếm..." aria-label="Search"
                            name="query">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+                    <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
                 </form>
             </li>
         </ul>
