@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,30 +19,35 @@ class UserSeeder extends Seeder
             [
                 'username' => 'user1',
                 'email' => 'user1@example.com',
+                'profile_image' => 'default_user.png',
                 'password' => Hash::make('password'),
                 'role' => 'user',
             ],
             [
                 'username' => 'user2',
                 'email' => 'user2@example.com',
+                'profile_image' => 'default_user.png',
                 'password' => Hash::make('password'),
                 'role' => 'user',
             ],
             [
                 'username' => 'user3',
                 'email' => 'user3@example.com',
+                'profile_image' => 'default_user.png',
                 'password' => Hash::make('password'),
                 'role' => 'user',
             ],
             [
                 'username' => 'user4',
                 'email' => 'user4@example.com',
+                'profile_image' => 'default_user.png',
                 'password' => Hash::make('password'),
                 'role' => 'user',
             ],
             [
                 'username' => 'user5',
                 'email' => 'user5@example.com',
+                'profile_image' => 'default_user.png',
                 'password' => Hash::make('password'),
                 'role' => 'user',
             ]
