@@ -15,7 +15,7 @@ use App\Http\Controllers\HomeController;
 */
 
 // Home
-Route::get('/products', [HomeController::class, 'index'])->name('products');
+Route::get('/home', [HomeController::class, 'index'])->name('products');
 Route::get('/phones', [HomeController::class, 'showPhones'])->name('phones');
 Route::get('/laptops', [HomeController::class, 'showLaptops'])->name('laptops');
 Route::get('/desktops', [HomeController::class, 'showDesktops'])->name('desktops');
