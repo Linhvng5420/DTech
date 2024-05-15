@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 class CrudUserController extends Controller
 {
-    // Đăng ký
+
+// Đăng ký
     public function signup()
     {
         return view('crud.signup');
@@ -46,5 +47,27 @@ class CrudUserController extends Controller
 
         return redirect("#")->withSuccess('Đăng ký thành công');
     }
+    
+    // Đăng Nhập
+    public function login()
+    {
+        return view('crud.login');
+    }
 
+    public function authUser(Request $request)
+    {
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('username', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('Home')
+                ->withSuccess('Đăng nhập thành công');
+        }
+
+        return redirect("login")->withSuccess('Đăng Nhập Thất Bại!');
+    }
 }

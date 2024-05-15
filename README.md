@@ -34,4 +34,3 @@ php artisan make:seed
 ```bash
 php artisan db:seed
 ```
-

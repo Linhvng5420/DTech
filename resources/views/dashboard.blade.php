@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D-Tech</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -96,27 +96,27 @@
     <p>D-Tech</p>
 
     {{--  L-S  --}}
-    <a href="#">Đăng Nhập</a>
+    <a href="{{route('login')}}">Đăng Nhập</a>
     <a href="{{ route('signup') }}">Đăng Ký</a>
-  </nav>
+</nav>
 
-    {{--  Home  --}}
-    <a href="#">Home</a>
+{{--  Home  --}}
+<a href="#">Home</a>
 
-    {{--  User  --}}
-    <a href="#">Trang Cá Nhân</a>
+{{--  User  --}}
+<a href="#">Trang Cá Nhân</a>
 
-    {{--  Cart  --}}
-    <a href="#">Giỏ Hàng</a>
+{{--  Cart  --}}
+<a href="#">Giỏ Hàng</a>
 
-    {{-- CRUD --}}
-    <div class="dropdown">
-        <a href="#">Quản Trị</a>
-        <div class="dropdown-content">
-            <a href="#">Sản Phẩm</a>
-            <a href="#">User</a>
-        </div>
+{{-- CRUD --}}
+<div class="dropdown">
+    <a href="#">Quản Trị</a>
+    <div class="dropdown-content">
+        <a href="#">Sản Phẩm</a>
+        <a href="#">User</a>
     </div>
+</div>
 </nav>
 
 @include('navsub')
