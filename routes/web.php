@@ -25,7 +25,8 @@ Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 
 // Home
-Route::get('/home', [HomeController::class, 'index'])->name('products');
+//Route::get('/home', [HomeController::class, 'index'])->name('products');
+Route::get('/', [HomeController::class, 'index'])->name('products'); //Đây là trang đầu tiên (Home)
 Route::get('/phones', [HomeController::class, 'showPhones'])->name('phones');
 Route::get('/laptops', [HomeController::class, 'showLaptops'])->name('laptops');
 Route::get('/desktops', [HomeController::class, 'showDesktops'])->name('desktops');
@@ -41,6 +42,3 @@ Route::get('edit-phone/{id}', [PhoneController::class, 'edit'])->name('phone.edi
 Route::post('update-phone/{id}', [PhoneController::class, 'update'])->name('phone.update');
 Route::get('phone/delete/{id}', [PhoneController::class, 'delete'])->name('phone.delete');
 
-Route::get('/', function () {
-    return view('welcome');
-});
