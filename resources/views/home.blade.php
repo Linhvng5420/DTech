@@ -37,7 +37,6 @@
         <!--Phân Trang-->
         <div class="d-flex justify-content-center mt-4">
             {{ $products->appends(request()->query())->links('pagination::bootstrap-4') }}
-            {{--            {{ $products->links('pagination::bootstrap-4') }}--}}
         </div>
     </div>
 @endsection
