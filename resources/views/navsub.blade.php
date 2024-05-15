@@ -2,22 +2,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Phone</a>
+                <a class="nav-link" href="{{ route('phones') }}">Phone</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Laptop</a>
+                <a class="nav-link" href="{{ route('laptops') }}">Laptop</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Desktop</a>
+                <a class="nav-link" href="{{ route('desktops') }}">Desktop</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Mouse</a>
+                <a class="nav-link" href="{{ route('mice') }}">Mouse</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">EarPhone</a>
+                <a class="nav-link" href="{{ route('earphones') }}">EarPhone</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Screen</a>
+                <a class="nav-link" href="{{ route('screens') }}">Screen</a>
             </li>
         </ul>
     </div>
