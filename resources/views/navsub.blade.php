@@ -2,25 +2,25 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('products') }}">All</a>
+                <a class="nav-link" href="{{ route('home') }}">All</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('phones') }}">Phone</a>
+                <a class="nav-link" href="{{ route('products.phones') }}">Phone</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('laptops') }}">Laptop</a>
+                <a class="nav-link" href="{{ route('products.laptops') }}">Laptop</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('desktops') }}">Desktop</a>
+                <a class="nav-link" href="{{ route('products.desktops') }}">Desktop</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('mice') }}">Mouse</a>
+                <a class="nav-link" href="{{ route('products.mice') }}">Mouse</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('earphones') }}">EarPhone</a>
+                <a class="nav-link" href="{{ route('products.earphones') }}">EarPhone</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('screens') }}">Screen</a>
+                <a class="nav-link" href="{{ route('products.screens') }}">Screen</a>
             </li>
         </ul>
 

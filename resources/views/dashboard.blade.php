@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D-Tech</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     @stack('styles')
     <style>
         body {
@@ -54,38 +53,53 @@
             justify-content: center;
         }
 
-        /* Phần tổng của dropdown */
+        /* dropdown */
         .dropdown {
             position: relative;
-            display: inline-block; /* Cho phép các mục khác trong navbar được hiển thị cùng một hàng */
+            display: inline-block;
         }
 
-        /* Nội dung của dropdown */
         .dropdown-content {
-            display: none; /* Ẩn dropdown menu */
-            position: absolute; /* Đảm bảo dropdown hiển thị với vị trí tuyệt đối */
-            background-color: #f9f9f9; /* Màu nền cho dropdown */
-            min-width: 160px; /* Rộng tối thiểu */
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Thêm shadow */
-            z-index: 1; /* Đảm bảo dropdown ở trên các phần tử khác */
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
         }
 
-        /* Hiển thị khi được hover */
         .dropdown:hover .dropdown-content {
-            display: block; /* Hiển thị dropdown menu */
+            display: block;
         }
 
-        /* Style lại links */
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
-            text-decoration: none; /* Bỏ gạch dưới */
-            display: block; /* Hiển thị đầy đủ chiều rộng */
+            text-decoration: none;
+            display: block;
         }
 
-        /* Thay đổi màu sắc khi được hover */
         .dropdown-content a:hover {
             background-color: #ddd;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-submenu:hover .dropdown-submenu-content {
+            display: block;
         }
     </style>
 </head>
@@ -95,28 +109,37 @@
 <nav class="navbar">
     <p>D-Tech</p>
 
-    {{--  L-S  --}}
-    <a href="{{route('login')}}">Đăng Nhập</a>
+    <!-- Users -->
+    <a href="{{ route('login') }}">Đăng Nhập</a>
     <a href="{{ route('signup') }}">Đăng Ký</a>
-</nav>
 
-{{--  Home  --}}
-<a href="#">Home</a>
+    <!-- Home -->
+    <a href="{{ route('home') }}">Home</a>
 
-{{--  User  --}}
-<a href="#">Trang Cá Nhân</a>
+    <!-- User -->
+    <a href="#">Trang Cá Nhân</a>
 
-{{--  Cart  --}}
-<a href="#">Giỏ Hàng</a>
+    <!-- Cart -->
+    <a href="#">Giỏ Hàng</a>
 
-{{-- CRUD --}}
-<div class="dropdown">
-    <a href="#">Quản Trị</a>
-    <div class="dropdown-content">
-        <a href="#">Sản Phẩm</a>
-        <a href="#">User</a>
+    <!-- CRUD -->
+    <div class="dropdown">
+        <a href="#">Quản Trị</a>
+        <div class="dropdown-content">
+            <div class="dropdown-submenu">
+                <a href="#">Sản Phẩm</a>
+                <div class="dropdown-submenu-content">
+                    <a href="">Desktop</a>
+                    <a href="">EarPhone</a>
+                    <a href="">Laptop</a>
+                    <a href="">Phone</a>
+                    <a href="">Mouse</a>
+                    <a href="">Screen</a>
+                </div>
+            </div>
+            <a href="#">User</a>
+        </div>
     </div>
-</div>
 </nav>
 
 @include('navsub')
