@@ -10,8 +10,8 @@
                 @endif
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h3>WASSASU Laravel</h3>
-                        <a href="{{ route('phone.add') }}" class="btn btn-primary">Thêm Sản Phẩm</a>
+                        <h3>PHONE CRUD</h3>
+                        <a href="{{ route('admin.phone.create') }}" class="btn btn-primary">Thêm Sản Phẩm</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
@@ -41,9 +41,9 @@
                                     <td>{{ $phone->Rom }}</td>
                                     <td>{{ $phone->Hang }}</td>
                                     <td>
-                                        <a href="{{ route('phone.edit', ['id' => $phone->id]) }}"
+                                        <a href="{{ route('admin.phone.edit', ['id' => $phone->id]) }}"
                                            class="btn btn-primary btn-sm">Sửa</a>
-                                        <a href="{{ route('phone.delete', ['id' => $phone->id]) }}"
+                                        <a href="{{ route('admin.phone.delete', ['id' => $phone->id]) }}"
                                            class="btn btn-danger btn-sm">Xóa</a>
                                     </td>
                                 </tr>

@@ -25,7 +25,7 @@ Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 
 // Home
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products/phones', [HomeController::class, 'showPhones'])->name('products.phones');
 Route::get('/products/laptops', [HomeController::class, 'showLaptops'])->name('products.laptops');
 Route::get('/products/desktops', [HomeController::class, 'showDesktops'])->name('products.desktops');
