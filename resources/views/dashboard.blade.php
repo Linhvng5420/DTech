@@ -97,8 +97,8 @@
 
     {{--  L-S  --}}
     <a href="#">Đăng Nhập</a>
-    <a href="#">Đăng Ký</a>
-    <a href="#">Đăng Xuất</a>
+    <a href="{{ route('signup') }}">Đăng Ký</a>
+  </nav>
 
     {{--  Home  --}}
     <a href="#">Home</a>
