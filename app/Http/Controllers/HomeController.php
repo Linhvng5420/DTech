@@ -98,4 +98,38 @@ class HomeController extends Controller
         $screens = Screen::paginate(5);
         return view('home', ['products' => $screens, 'type' => 'screen']);
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        // Lấy dữ liệu từ tất cả các bảng
+        $phones = Phone::where('TenSP', 'LIKE', '%' . $query . '%')->get();
+        $laptops = Laptop::where('TenSP', 'LIKE', '%' . $query . '%')->get();
+        $desktops = Desktop::where('TenSP', 'LIKE', '%' . $query . '%')->get();
+        $mice = Mouse::where('TenSP', 'LIKE', '%' . $query . '%')->get();
+        $earphones = Earphone::where('TenSP', 'LIKE', '%' . $query . '%')->get();
+        $screens = Screen::where('TenSP', 'LIKE', '%' . $query . '%')->get();
+
+        // Hợp nhất tất cả các sản phẩm tìm kiếm được thành một bộ sưu tập
+        $products = collect();
+        $products = $products->merge($phones)
+            ->merge($laptops)
+            ->merge($desktops)
+            ->merge($mice)
+            ->merge($earphones)
+            ->merge($screens);
+
+        // Sắp xếp theo thời gian tạo mới nhất
+        $products = $products->sortByDesc('created_at')->values();
+
+        // Tạo phân trang 6 cho products
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        $perPage = 6;
+        $currentPageItems = $products->slice(($currentPage - 1) * $perPage, $perPage)->all();
+        $paginatedItems = new LengthAwarePaginator($currentPageItems, $products->count(), $perPage);
+        $paginatedItems->setPath(request()->url());
+
+        return view('home', ['products' => $paginatedItems, 'type' => 'products']);
+    }
 }

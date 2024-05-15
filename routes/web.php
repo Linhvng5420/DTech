@@ -32,6 +32,7 @@ Route::get('/products/desktops', [HomeController::class, 'showDesktops'])->name(
 Route::get('/products/mice', [HomeController::class, 'showMice'])->name('products.mice');
 Route::get('/products/earphones', [HomeController::class, 'showEarphones'])->name('products.earphones');
 Route::get('/products/screens', [HomeController::class, 'showScreens'])->name('products.screens');
+Route::get('/search', [HomeController::class, 'search'])->name('search.products');
 
 // CRUD
 Route::prefix('admin/phones')->group(function () {
