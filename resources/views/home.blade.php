@@ -6,9 +6,13 @@
             @foreach ($products as $product)
                 <div class="col-md-4 mt-2">
                     <div class="card" style="padding: 5px; height: 30rem; width: 20rem;
-                    display: grid; justify-items: center; align-items: center;">
+        display: grid; justify-items: center; align-items: center;">
                         <div>
-                            <img src="{{ asset('images/' . $product->HinhAnh) }}" alt="{{ $product->TenSP }}"
+                            @php
+                                $productType = strtolower(str_replace('App\\Models\\', '', get_class($product)));
+                            @endphp
+                            <img src="{{ asset('uploads/'. $productType .'/' . $product->HinhAnh) }}"
+                                 alt="{{ $product->TenSP }}"
                                  class="card-img-top" style="max-width: 200px; max-height: 190px; object-fit: cover;">
                         </div>
                         <div class="card-body">
@@ -33,7 +37,7 @@
         <!--Phân Trang-->
         <div class="d-flex justify-content-center mt-4">
             {{ $products->appends(request()->query())->links('pagination::bootstrap-4') }}
-{{--            {{ $products->links('pagination::bootstrap-4') }}--}}
+            {{--            {{ $products->links('pagination::bootstrap-4') }}--}}
         </div>
     </div>
 @endsection
