@@ -3,10 +3,6 @@
 use App\Http\Controllers\PhoneController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('phones', [PhoneController::class, 'index'])->name('phone.all');
 Route::get('add-phones', [PhoneController::class, 'addphone'])->name('phone.add');
 Route::post('add-phones', [PhoneController::class, 'store'])->name('phone.store');

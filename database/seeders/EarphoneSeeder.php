@@ -23,7 +23,7 @@ class EarphoneSeeder extends Seeder
 
             DB::table('earphone')->insert([
                 'TenSP' => $brand . ' Earphone ' . $color,
-                'HinhAnh' => null,
+                'HinhAnh' => 'earphone_' . ($i + 1) . '.png',
                 'MauSac' => $color,
                 'Gia' => $price,
                 'MieuTa' => null,

@@ -23,7 +23,7 @@ class LaptopSeeder extends Seeder
 
             DB::table('laptop')->insert([
                 'TenSP' => $brand . ' Laptop ' . $color,
-                'HinhAnh' => null,
+                'HinhAnh' => 'laptop_' . ($i + 1) . '.png',
                 'MauSac' => $color,
                 'Gia' => $price,
                 'Ram' => mt_rand(4, 16),

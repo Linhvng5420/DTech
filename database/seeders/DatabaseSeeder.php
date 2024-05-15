@@ -30,5 +30,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MouseSeeder::class);
         $this->call(PhoneSeeder::class);
         $this->call(ScreenSeeder::class);
+        $this->call(EarphoneSeeder::class);
     }
 }
