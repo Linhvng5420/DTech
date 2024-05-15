@@ -68,7 +68,7 @@ class PhoneController extends Controller
     public function index()
     {
         $phones = Phone::paginate(3); // Số lượng sản phẩm mỗi trang là 10, bạn có thể thay đổi số này nếu cần
-        return view('phone.index', compact('phones'));
+        return view('phone.indexcrudphone', compact('phones'));
     }
 
     public function edit($id)
