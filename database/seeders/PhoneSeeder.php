@@ -14,7 +14,7 @@ class PhoneSeeder extends Seeder
      */
     public function run(): void
     {
-        $brandNames = ['apple', 'asus', 'dell', 'hp', 'iphone', 'macbook', 'samsung', 'sony', 'xiaomi'];
+        $brandNames = ['apple', 'asus', 'iphone', 'samsung', 'sony', 'xiaomi'];
         $colorOptions = ['Black', 'White', 'Blue', 'Red', 'Gray'];
 
         for ($i = 0; $i < 10; $i++) {
