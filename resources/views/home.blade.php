@@ -28,5 +28,19 @@
                 </div>
             @endforeach
         </div>
+
+        <!--Phân Trang-->
+        <div class="d-flex justify-content-center mt-4">
+            {{ $products->links('pagination::bootstrap-4') }}
+        </div>
     </div>
+@endsection
+
+@section('styles')
+    <style>
+        .pagination svg {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
 @endsection

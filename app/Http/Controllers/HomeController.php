@@ -14,43 +14,43 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $phones = Phone::all();
+        $phones = Phone::paginate(5);
         return view('home', ['products' => $phones, 'type' => 'phone']);
     }
 
     public function showPhones()
     {
-        $phones = Phone::all();
+        $phones = Phone::paginate(5);
         return view('home', ['products' => $phones, 'type' => 'phone']);
     }
 
     public function showLaptops()
     {
-        $laptops = Laptop::all();
+        $laptops = Laptop::paginate(5);
         return view('home', ['products' => $laptops, 'type' => 'laptop']);
     }
 
     public function showDesktops()
     {
-        $desktops = Desktop::all();
+        $desktops = Desktop::paginate(5);
         return view('home', ['products' => $desktops, 'type' => 'desktop']);
     }
 
     public function showMice()
     {
-        $mice = Mouse::all();
+        $mice = Mouse::paginate(5);
         return view('home', ['products' => $mice, 'type' => 'mouse']);
     }
 
     public function showEarphones()
     {
-        $earphones = Earphone::all();
+        $earphones = Earphone::paginate(5);
         return view('home', ['products' => $earphones, 'type' => 'earphone']);
     }
 
     public function showScreens()
     {
-        $screens = Screen::all();
+        $screens = Screen::paginate(5);
         return view('home', ['products' => $screens, 'type' => 'screen']);
     }
 }
