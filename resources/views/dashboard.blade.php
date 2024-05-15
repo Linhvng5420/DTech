@@ -15,23 +15,27 @@
         .navbar {
             display: flex;
             justify-content: center;
-            margin: 0 5%;
-            border: 1px solid black;
             align-items: center;
-        }
-
-        .navbar a, p {
-            color: black;
-            text-decoration: none;
-            padding: 20px 20px;
-            font-weight: bold;
+            margin: 1% 5%;
+            border: 1px solid black;
+            position: relative;
         }
 
         .navbar p {
+            margin: 0;
+            padding: 5px;
             font-size: 30px;
-            position: absolute;
-            left: 100px;
+            font-weight: bold;
             color: red;
+            position: absolute;
+            left: 10px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 10px;
+            font-weight: bold;
         }
 
         .navbar a:hover {

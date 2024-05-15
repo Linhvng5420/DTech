@@ -24,7 +24,7 @@ class HomeController extends Controller
         $earphones = Earphone::all();
         $screens = Screen::all();
 
-        // Hợp nhất tất cả các sản phẩm thành một bộ sưu tập
+        // Hợp nhất tất cả các sản phẩm thành một
         $products = collect();
         $products = $products->merge($phones)
             ->merge($laptops)
@@ -32,6 +32,23 @@ class HomeController extends Controller
             ->merge($mice)
             ->merge($earphones)
             ->merge($screens);
+
+        // Lấy tất cả brand của các sản phẩm hiện có
+        $phoneBrands = Phone::select('Hang')->distinct()->pluck('Hang');
+        $laptopBrands = Laptop::select('Hang')->distinct()->pluck('Hang');
+        $desktopBrands = Desktop::select('Hang')->distinct()->pluck('Hang');
+        $mouseBrands = Mouse::select('Hang')->distinct()->pluck('Hang');
+        $earphoneBrands = Earphone::select('Hang')->distinct()->pluck('Hang');
+        $screenBrands = Screen::select('Hang')->distinct()->pluck('Hang');
+
+        $allBrands = $phoneBrands
+            ->merge($laptopBrands)
+            ->merge($desktopBrands)
+            ->merge($mouseBrands)
+            ->merge($earphoneBrands)
+            ->merge($screenBrands)
+            ->unique()
+            ->values();
 
         // Sắp xếp theo thời gian tạo mới nhất (nếu có trường 'created_at')
         $products = $products->sortByDesc('created_at')->values();
