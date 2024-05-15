@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -23,7 +24,7 @@ class DesktopSeeder extends Seeder
 
             DB::table('desktop')->insert([
                 'TenSP' => $brand . ' Desktop ' . $color,
-                'HinhAnh' => null,
+                'HinhAnh' => 'desktop_' . ($i + 1) . '.png',
                 'MauSac' => $color,
                 'Gia' => $price,
                 'Ram' => mt_rand(4, 16),
