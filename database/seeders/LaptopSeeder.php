@@ -28,7 +28,7 @@ class LaptopSeeder extends Seeder
                 'Gia' => $price,
                 'Ram' => mt_rand(4, 16),
                 'Rom' => mt_rand(128, 1024),
-                'MieuTa' => 'Mô tả cho lesktop ' . $brand,
+                'MieuTa' => 'Mô tả cho Latop ' . $brand,
                 'Hang' => $brand,
             ]);
         }

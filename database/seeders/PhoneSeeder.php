@@ -29,7 +29,7 @@ class PhoneSeeder extends Seeder
                 'Gia' => $price,
                 'Ram' => mt_rand(4, 16),
                 'Rom' => mt_rand(128, 1024),
-                'MieuTa' => 'Mô tả cho desktop ' . $brand,
+                'MieuTa' => 'Mô tả cho Phone ' . $brand,
                 'Hang' => $brand,
             ]);
         }
