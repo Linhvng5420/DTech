@@ -14,9 +14,11 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Home (User)
-Route::get('/home', [HomeController::class, 'index']);
-
-Route::get('/', function () {
-    return view('/home');
-});
+// Home
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/phones', [HomeController::class, 'showPhones'])->name('phones');
+Route::get('/laptops', [HomeController::class, 'showLaptops'])->name('laptops');
+Route::get('/desktops', [HomeController::class, 'showDesktops'])->name('desktops');
+Route::get('/mice', [HomeController::class, 'showMice'])->name('mice');
+Route::get('/earphones', [HomeController::class, 'showEarphones'])->name('earphones');
+Route::get('/screens', [HomeController::class, 'showScreens'])->name('screens');
