@@ -27,7 +27,7 @@ class ScreenSeeder extends Seeder
                 'HinhAnh' => 'screen_' . ($i + 1) . '.png',
                 'MauSac' => $color,
                 'Gia' => $price,
-                'MieuTa' => 'Mô tả cho screen ' . $brand,
+                'MieuTa' => 'Mô tả cho Screen ' . $brand,
                 'Hang' => $brand,
             ]);
         }

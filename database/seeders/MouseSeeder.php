@@ -27,7 +27,7 @@ class MouseSeeder extends Seeder
                 'HinhAnh' => 'mouse_' . ($i + 1) . '.png',
                 'MauSac' => $color,
                 'Gia' => $price,
-                'MieuTa' => 'Mô tả cho lesktop ' . $brand,
+                'MieuTa' => 'Mô tả cho Mouse ' . $brand,
                 'Hang' => $brand,
             ]);
         }

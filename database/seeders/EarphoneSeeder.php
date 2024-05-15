@@ -26,7 +26,7 @@ class EarphoneSeeder extends Seeder
                 'HinhAnh' => 'earphone_' . ($i + 1) . '.png',
                 'MauSac' => $color,
                 'Gia' => $price,
-                'MieuTa' => null,
+                'MieuTa' => 'Mô tả cho Earphone ' . $brand,
                 'Hang' => $brand,
             ]);
         }
