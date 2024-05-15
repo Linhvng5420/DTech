@@ -24,7 +24,7 @@ class PhoneSeeder extends Seeder
 
             DB::table('phone')->insert([
                 'TenSP' => $brand .' '. $color .' '. $price,
-                'HinhAnh' => null,
+                'HinhAnh' => 'phone_' . ($i + 1) . '.png',
                 'MauSac' => $color,
                 'Gia' => $price,
                 'Ram' => mt_rand(4, 16),

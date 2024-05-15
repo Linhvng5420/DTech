@@ -24,7 +24,7 @@ class MouseSeeder extends Seeder
 
             DB::table('mouse')->insert([
                 'TenSP' => ' Mouse ' .' '. $brand .' '. $color .' '. $price,
-                'HinhAnh' => null,
+                'HinhAnh' => 'mouse_' . ($i + 1) . '.png',
                 'MauSac' => $color,
                 'Gia' => $price,
                 'MieuTa' => 'Mô tả cho lesktop ' . $brand,
