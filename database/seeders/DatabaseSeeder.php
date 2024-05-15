@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-//use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+ //use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use http\Client\Curl\User;
 use Illuminate\Database\Seeder;
 
@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
 
         // Seed
         $this->call(AdminUserSeeder::class);

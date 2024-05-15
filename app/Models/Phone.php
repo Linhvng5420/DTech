@@ -8,18 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Phone extends Model
 {
     use HasFactory;
+
     protected $table = 'phone';
+
     protected $fillable = [
-        'TenSP',
-        'HinhAnh',
-        'MauSac',
-        'Gia',
-        'Ram',
-        'Rom',
-        'MieuTa',
-        'Hang'
-    ];
-    protected $attributes = [
-        'MieuTa' => 'ahihi', // Giá trị mặc định
+        'MaSP', 'TenSP', 'HinhAnh', 'MauSac', 'Gia', 'Ram', 'Rom', 'MieuTa', 'Hang'
     ];
 }
