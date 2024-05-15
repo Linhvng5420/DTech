@@ -14,7 +14,7 @@ class PhoneSeeder extends Seeder
      */
     public function run(): void
     {
-        $brandNames = ['apple', 'asus', 'dell', 'hp', 'iphone', 'macbook', 'samsung', 'sony', 'xiaomi'];
+        $brandNames = ['apple', 'asus', 'iphone', 'samsung', 'sony', 'xiaomi'];
         $colorOptions = ['Black', 'White', 'Blue', 'Red', 'Gray'];
 
         for ($i = 0; $i < 10; $i++) {
@@ -24,7 +24,7 @@ class PhoneSeeder extends Seeder
 
             DB::table('phone')->insert([
                 'TenSP' => $brand .' '. $color .' '. $price,
-                'HinhAnh' => null,
+                'HinhAnh' => 'phone_' . ($i + 1) . '.png',
                 'MauSac' => $color,
                 'Gia' => $price,
                 'Ram' => mt_rand(4, 16),

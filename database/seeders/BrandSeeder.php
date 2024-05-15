@@ -17,30 +17,39 @@ class BrandSeeder extends Seeder
         $brands = [
             [
                 'TenHang' => 'apple',
+                'HinhAnh' => strtolower('apple') . '.png', // 'apple.png'
             ],
             [
                 'TenHang' => 'asus',
+                'HinhAnh' => strtolower('asus') . '.png', // 'asus.png'
             ],
             [
                 'TenHang' => 'dell',
+                'HinhAnh' => strtolower('dell') . '.png', // 'dell.png'
             ],
             [
                 'TenHang' => 'hp',
+                'HinhAnh' => strtolower('hp') . '.png', // 'hp.png'
             ],
             [
                 'TenHang' => 'iphone',
+                'HinhAnh' => strtolower('iphone') . '.png', // 'iphone.png'
             ],
             [
                 'TenHang' => 'macbook',
+                'HinhAnh' => strtolower('macbook') . '.png', // 'macbook.png'
             ],
             [
                 'TenHang' => 'samsung',
+                'HinhAnh' => strtolower('samsung') . '.png', // 'samsung.png'
             ],
             [
                 'TenHang' => 'sony',
+                'HinhAnh' => strtolower('sony') . '.png', // 'sony.png'
             ],
             [
                 'TenHang' => 'xiaomi',
+                'HinhAnh' => strtolower('xiaomi') . '.png', // 'xiaomi.png'
             ],
         ];
 

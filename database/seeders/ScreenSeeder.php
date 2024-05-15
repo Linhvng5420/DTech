@@ -24,7 +24,7 @@ class ScreenSeeder extends Seeder
 
             DB::table('screen')->insert([
                 'TenSP' => 'Man Hinh ' . $brand .' '. $color .' '. $price,
-                'HinhAnh' => null,
+                'HinhAnh' => 'screen_' . ($i + 1) . '.png',
                 'MauSac' => $color,
                 'Gia' => $price,
                 'MieuTa' => 'Mô tả cho screen ' . $brand,
