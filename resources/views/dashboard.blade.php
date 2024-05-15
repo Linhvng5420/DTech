@@ -111,8 +111,10 @@
 <body>
 
 <nav class="navbar">
+    <!-- Title -->
     <p>D-Tech</p>
 
+    <!-- Hàng 1 -->
     <!-- Users -->
     <a href="{{ route('login') }}">Đăng Nhập</a>
     <a href="{{ route('signup') }}">Đăng Ký</a>
@@ -136,7 +138,7 @@
                     <a href="">Desktop</a>
                     <a href="">EarPhone</a>
                     <a href="">Laptop</a>
-                    <a href="">Phone</a>
+                    <a href="{{ route('admin.phone.index') }}">Phone</a>
                     <a href="">Mouse</a>
                     <a href="">Screen</a>
                 </div>
@@ -144,9 +146,14 @@
             <a href="#">User</a>
         </div>
     </div>
+
+    <!-- Hàng 2-->
 </nav>
 
-@include('navsub')
+<!-- Chỉ hiển thụi subnav khi ở trang sp-->
+@if(request()->is('products') || request()->is('products/*') || request()->is('/'))
+    @include('navsub')
+@endif
 
 <div class="content-yield">
     @yield('content')
