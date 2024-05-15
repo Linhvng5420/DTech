@@ -16,6 +16,7 @@
                             <p class="card-text">Giá: {{ number_format($product->Gia) }} VND</p>
                         </div>
 
+                        <!--Nút Giỏ Hàng (Chưa action)-->
                         <form action="#" method="POST">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
