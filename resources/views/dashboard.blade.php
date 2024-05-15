@@ -151,7 +151,7 @@
 </nav>
 
 <!-- Chỉ hiển thụi subnav khi ở trang sp-->
-@if(request()->is('products') || request()->is('products/*') || request()->is('/'))
+@if(request()->is('products') || request()->is('products/*') || request()->is('/') || request()->is('search') || request()->is('search/*'))
     @include('navsub')
 @endif
 
