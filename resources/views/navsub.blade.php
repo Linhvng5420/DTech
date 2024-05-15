@@ -2,6 +2,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('products') }}">All</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('phones') }}">Phone</a>
             </li>
             <li class="nav-item">
@@ -19,6 +22,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('screens') }}">Screen</a>
             </li>
+        </ul>
+
+        <!--Brands-->
+        <ul class="navbar-nav">
+
         </ul>
     </div>
 </nav>

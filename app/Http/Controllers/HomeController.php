@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 use App\Models\Phone;
 use App\Models\Laptop;
 use App\Models\Desktop;
@@ -14,8 +16,34 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $phones = Phone::paginate(5);
-        return view('home', ['products' => $phones, 'type' => 'phone']);
+        // Lấy dữ liệu từ tất cả các bảng
+        $phones = Phone::all();
+        $laptops = Laptop::all();
+        $desktops = Desktop::all();
+        $mice = Mouse::all();
+        $earphones = Earphone::all();
+        $screens = Screen::all();
+
+        // Hợp nhất tất cả các sản phẩm thành một bộ sưu tập
+        $products = collect();
+        $products = $products->merge($phones)
+            ->merge($laptops)
+            ->merge($desktops)
+            ->merge($mice)
+            ->merge($earphones)
+            ->merge($screens);
+
+        // Sắp xếp theo thời gian tạo mới nhất (nếu có trường 'created_at')
+        $products = $products->sortByDesc('created_at')->values();
+
+        // Tạo phân trang 12 cho products
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        $perPage = 12;
+        $currentPageItems = $products->slice(($currentPage - 1) * $perPage, $perPage)->all();
+        $paginatedItems = new LengthAwarePaginator($currentPageItems, $products->count(), $perPage);
+        $paginatedItems->setPath(request()->url());
+
+        return view('home', ['products' => $paginatedItems, 'type' => 'products']);
     }
 
     public function showPhones()
