@@ -26,7 +26,8 @@
     <a href="{{ route('home') }}">Home</a>
 
     <!-- User -->
-{{--    <a href="{{ route('users.view', ['id' => Auth::user()->id]) }}">Trang Cá Nhân</a>--}}
+    {{--    <a href="{{ route('users.view', ['id' => Auth::user()->id]) }}">Trang Cá Nhân</a>--}}
+    <a href="">Trang Cá Nhân</a>
 
     <!-- Cart -->
     <a href="#">Giỏ Hàng</a>
@@ -36,7 +37,7 @@
         <a href="#">Quản Trị</a>
         <div class="dropdown-content">
             <div class="dropdown-submenu">
-                <a href="#">Sản Phẩm</a>
+                <a>Sản Phẩm</a>
                 <div class="dropdown-submenu-content">
                     <a href="">Desktop</a>
                     <a href="{{route('admin.earphone.index')}}">EarPhone</a>
@@ -50,7 +51,13 @@
         </div>
     </div>
 
-    <a href="#">Đăng Xuất</a>
+    {{--Đăng Xuất--}}
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+
+    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng
+        Xuất</a>
 </nav>
 
 <!-- Chỉ hiển thụi subnav khi ở trang sp-->
@@ -80,7 +87,6 @@
     <script>
         const app = Vue.createApp({});
         app.component('product-card', require('./components/product-card.vue').default);
-
         app.mount('#app');
     </script>
 @endif

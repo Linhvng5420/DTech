@@ -101,6 +101,7 @@ class CrudUserController extends Controller
         $user = User::find($user_id);
         return view('crud.update', ['user' => $user]);
     }
+
     public function postUpdateUser(Request $request)
     {
         $user_id = $request->get('id');
@@ -145,6 +146,7 @@ class CrudUserController extends Controller
         Auth::logout();
 
         $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
         return redirect('login')->with('success', 'Đăng xuất thành công');
     }
