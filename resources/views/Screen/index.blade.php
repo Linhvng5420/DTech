@@ -7,6 +7,7 @@
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">{{ session('status') }}</div>
                 @endif
+
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h3>Earphone CRUD</h3>

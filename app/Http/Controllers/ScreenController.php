@@ -113,6 +113,7 @@ class ScreenController extends Controller
         if (File::exists($hinhanh)) {
             File::delete($hinhanh);
         }
+
         $screen->delete();
         return redirect()->route('admin.screen.index')->with('status', 'Đã xóa sản phẩm');
     }

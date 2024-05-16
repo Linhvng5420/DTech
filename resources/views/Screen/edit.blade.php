@@ -48,8 +48,9 @@
                                 <img src="{{ asset('uploads/screen/' . $screen->HinhAnh) }}" width="70px"
                                      height="70px" alt="Ảnh sản phẩm hiện tại">
                             </div>
+
                             <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                <button type="submit" class="btn btn-primary">Lưu</button>
                             </div>
                         </form>
                     </div>

@@ -63,7 +63,7 @@
     @yield('content_update')
 </div>
 
-{{--product-card với vuejs--}}
+{{--product-card với vuejs --}}
 @if(request()->is('products') || request()->is('products/*') || request()->is('/') || request()->is('search') || request()->is('search/*'))
     <section id="app">
         <div class="container">

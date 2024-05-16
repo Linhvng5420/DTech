@@ -42,6 +42,7 @@
                                 <label for="HinhAnh">Hình Ảnh</label>
                                 <input type="file" name="HinhAnh" class="form-control">
                             </div>
+                            
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Thêm</button>
                             </div>
