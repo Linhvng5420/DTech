@@ -21,7 +21,8 @@ Route::get('signup', [CrudUserController::class, 'signup'])->name('signup');
 Route::post('signup', [CrudUserController::class, 'postUser'])->name('user.postUser');
 
 // Personal Page
-Route::get('/view', [CrudUserController::class, 'viewUser'])->name('users.view');
+Route::get('/users/view', [CrudUserController::class, 'viewUser'])->name('users.view');
+Route::get('/users/update', [CrudUserController::class, 'updateUser'])->name('users.updateForm');
 
 // Log in
 Route::get('login', [CrudUserController::class, 'login'])->name('login');
@@ -45,7 +46,6 @@ Route::get('/product/{productType}/{id}', [HomeController::class, 'showProductDe
 Route::prefix('admin/')->group(function () {
     Route::get('/users', [CrudUserController::class, 'listUser'])->name('users.list');
     Route::get('/users/delete', [CrudUserController::class, 'deleteUser'])->name('users.delete');
-    Route::get('/users/update', [CrudUserController::class, 'updateUser'])->name('users.updateForm');
     Route::post('/users/update', [CrudUserController::class, 'postUpdateUser'])->name('users.update');
 });
 
