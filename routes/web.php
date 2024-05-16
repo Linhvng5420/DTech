@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MouseController;
 use App\Http\Controllers\EarPhoneController;
 use App\Http\Controllers\CrudUserController;
 use App\Http\Controllers\HomeController;
@@ -68,6 +69,16 @@ Route::prefix('admin/earphones')->group(function () {
     Route::get('/edit/{id}', [EarPhoneController::class, 'editEarPhones'])->name('admin.earphone.edit');
     Route::post('/update/{id}', [EarPhoneController::class, 'updateEarPhones'])->name('admin.earphone.update');
     Route::get('/delete/{id}', [EarPhoneController::class, 'deleteEarPhones'])->name('admin.earphone.delete');
+});
+
+// Crud Mouse
+Route::prefix('admin/mouses')->group(function () {
+    Route::get('/', [MouseController::class, 'indexMouses'])->name('admin.mouse.index');
+    Route::get('/create', [MouseController::class, 'addMouses'])->name('admin.mouse.create');
+    Route::post('/store', [MouseController::class, 'storeMouses'])->name('admin.mouse.store');
+    Route::get('/edit/{id}', [MouseController::class, 'editMouses'])->name('admin.mouse.edit');
+    Route::post('/update/{id}', [MouseController::class, 'updateMouses'])->name('admin.mouse.update');
+    Route::get('/delete/{id}', [MouseController::class, 'deleteMouses'])->name('admin.mouse.delete');
 });
 
 
