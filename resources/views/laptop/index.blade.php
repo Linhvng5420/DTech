@@ -10,8 +10,8 @@
                 @endif
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h3>Laptop Crud</h3>
-                        <a href="{{ route('laptop.add') }}" class="btn btn-primary">Thêm lapTop</a>
+                        <h3>LAPTOP CRUD</h3>
+                        <a href="{{ route('laptop.add') }}" class="btn btn-primary">Thêm LapTop</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
@@ -33,8 +33,9 @@
                                 <tr>
                                     <td>{{ $laptop->id }}</td>
                                     <td>{{ $laptop->TenSP }}</td>
-                                    <td><img src="{{ asset('images/'.$laptop->HinhAnh) }}" width="70px"
-                                             height="70px" alt="Ảnh sản phẩm"></td>
+                                    <td><img src="{{ asset('uploads/laptop/' . $laptop->HinhAnh) }}" width="100px"
+                                             height="70px"
+                                             alt="Ảnh sản phẩm"></td>
                                     <td>{{ $laptop->MauSac }}</td>
                                     <td>{{ $laptop->Gia }}</td>
                                     <td>{{ $laptop->Ram }}</td>

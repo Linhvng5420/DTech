@@ -41,7 +41,7 @@
                 <div class="dropdown-submenu-content">
                     <a href="">Desktop</a>
                     <a href="{{route('admin.earphone.index')}}">EarPhone</a>
-                    <a href="">Laptop</a>
+                    <a href="{{route('laptop.all')}}">Laptop</a>
                     <a href="{{ route('admin.phone.index') }}">Phone</a>
                     <a href="{{route('admin.mouse.index')}}">Mouse</a>
                     <a href="{{route('admin.screen.index')}}">Screen</a>
