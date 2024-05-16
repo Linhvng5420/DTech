@@ -16,32 +16,35 @@
                     <div class="card-body">
                         <table class="table table-striped">
                             <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Tên Sản Phẩm</th>
-                                    <th>Hình Ảnh</th>
-                                    <th>Màu Sắc</th>
-                                    <th>Giá</th>
-                                    <th>Ram</th>
-                                    <th>Rom</th>
-                                    <th>Hãng</th>
-                                    <th>Thao tác</th>
-                                </tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Hình Ảnh</th>
+                                <th>Màu Sắc</th>
+                                <th>Giá</th>
+                                <th>Ram</th>
+                                <th>Rom</th>
+                                <th>Hãng</th>
+                                <th>Thao tác</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                @foreach($desktops as $desktop)
+                            @foreach($desktops as $desktop)
                                 <tr>
                                     <td>{{ $desktop->id }}</td>
                                     <td>{{ $desktop->TenSP }}</td>
-                                    <td><img src="{{ asset('images/desktop'.$desktop->HinhAnh) }}" width="100px" height="70px" alt="Ảnh sản phẩm"></td>
+                                    <td><img src="{{ asset('uploads/desktop/' . $desktop->HinhAnh) }}" width="100px"
+                                             height="70px" alt="Ảnh sản phẩm"></td>
                                     <td>{{ $desktop->MauSac }}</td>
                                     <td>{{ $desktop->Gia }}</td>
                                     <td>{{ $desktop->Ram }}</td>
                                     <td>{{ $desktop->Rom }}</td>
                                     <td>{{ $desktop->Hang }}</td>
                                     <td>
-                                        <a href="{{ route('desktop.edit', ['id' => $desktop->id]) }}" class="btn btn-primary btn-sm">Sửa</a>
-                                        <a href="{{ route('desktop.delete', ['id' => $desktop->id]) }}" class="btn btn-danger btn-sm">Xóa</a>
+                                        <a href="{{ route('desktop.edit', ['id' => $desktop->id]) }}"
+                                           class="btn btn-primary btn-sm">Sửa</a>
+                                        <a href="{{ route('desktop.delete', ['id' => $desktop->id]) }}"
+                                           class="btn btn-danger btn-sm">Xóa</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -58,10 +61,10 @@
                                 <li class="page-item {{ $desktops->currentPage() == $i ? 'active' : '' }}">
                                     <a class="page-link" href="{{ $desktops->url($i) }}">{{ $i }}</a>
                                 </li>
-                                @endfor
-                                <li class="page-item {{ $desktops->nextPageUrl() ? '' : 'disabled' }}">
-                                    <a class="page-link" href="{{ $desktops->nextPageUrl() }}">Next</a>
-                                </li>
+                            @endfor
+                            <li class="page-item {{ $desktops->nextPageUrl() ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $desktops->nextPageUrl() }}">Next</a>
+                            </li>
                         </ul>
                     </div>
 
