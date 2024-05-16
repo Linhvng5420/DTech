@@ -28,27 +28,15 @@
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Giá</label>
-                                <<<<<<< HEAD:resources/views/phone/edit.blade.php
-                                <input type="number" name="Gia" id="" value="{{$phone->Gia}}" class="form-control">
+                                <input type="number" name="Gia" id="" value="{{$laptop->Gia}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Ram</label>
-                                <input type="number" name="Ram" id="" value="{{$phone->Ram}}" class="form-control">
+                                <input type="number" name="Ram" id="" value="{{$laptop->Ram}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Rom</label>
-                                <input type="number" name="Rom" id="" value="{{$phone->Rom}}" class="form-control">
-                                =======
-                                <input type="text" name="Gia" id="" value="{{$laptop->Gia}}" class="form-control">
-                            </div>
-                            <div class="form-group mv-3">
-                                <label for="">Ram</label>
-                                <input type="text" name="Ram" id="" value="{{$laptop->Ram}}" class="form-control">
-                            </div>
-                            <div class="form-group mv-3">
-                                <label for="">Rom</label>
-                                <input type="text" name="Rom" id="" value="{{$laptop->Rom}}" class="form-control">
-                                >>>>>>> @Su/QuanTri-LapTop:resources/views/laptop/edit.blade.php
+                                <input type="number" name="Rom" id="" value="{{$laptop->Rom}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Hãng</label>

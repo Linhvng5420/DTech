@@ -34,7 +34,7 @@ class LaptopController extends Controller
             $laptop->HinhAnh = $filename;
         }
         $laptop->save();
-        return redirect()->back()->with('status', 'Thêm laptop Thành công!');
+        return redirect()->route('laptop.all')->with('status', 'Thêm laptop Thành công!');
     }
 
 
