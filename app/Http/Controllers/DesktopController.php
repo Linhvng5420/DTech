@@ -15,6 +15,7 @@ class DesktopConTroller extends Controller
         // Logic để thêm desktop mới
         return view('desktop.create');
     }
+
     public function store(Request $request)
     {
         $desktop = new Desktop();
@@ -34,7 +35,7 @@ class DesktopConTroller extends Controller
             $desktop->HinhAnh = $filename;
         }
         $desktop->save();
-        return redirect()->back()->with('status', 'Thêm desktop Thành công!');
+        return redirect()->route('desktop.all')->with('status', 'Thêm desktop thành công!');
     }
 
 
