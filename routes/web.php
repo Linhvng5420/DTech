@@ -7,6 +7,7 @@ use App\Http\Controllers\EarPhoneController;
 use App\Http\Controllers\CrudUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PhoneController;
+use App\Http\Controllers\LaptopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,4 +92,13 @@ Route::prefix('admin/screens')->group(function () {
     Route::post('/update/{id}', [ScreenController::class, 'updateScreen'])->name('admin.screen.update');
     Route::get('/delete/{id}', [ScreenController::class, 'deleteScreen'])->name('admin.screen.delete');
 });
+
+// Crud Laptop
+Route::get('laptops', [LaptopController::class, 'index'])->name('laptop.all');
+Route::get('add-laptops', [LaptopController::class, 'addlaptop'])->name('laptop.add');
+Route::post('add-laptops', [LaptopController::class, 'store'])->name('laptop.store');
+Route::get('edit-laptop/{id}', [LaptopController::class, 'edit'])->name('laptop.edit');
+Route::post('update-laptop/{id}', [LaptopController::class, 'update'])->name('laptop.update');
+Route::get('laptop/delete/{id}', [LaptopController::class, 'delete'])->name('laptop.delete');
+
 
