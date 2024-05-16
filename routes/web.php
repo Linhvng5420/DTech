@@ -53,6 +53,7 @@ Route::prefix('admin/')->group(function () {
     Route::post('/users/update', [CrudUserController::class, 'postUpdateUser'])->name('users.update');
 });
 
+<<<<<<< HEAD
 // CRUD Phone
 Route::prefix('admin/phones')->group(function () {
     Route::get('/', [PhoneController::class, 'index'])->name('admin.phone.index');
@@ -100,5 +101,13 @@ Route::post('add-laptops', [LaptopController::class, 'store'])->name('laptop.sto
 Route::get('edit-laptop/{id}', [LaptopController::class, 'edit'])->name('laptop.edit');
 Route::post('update-laptop/{id}', [LaptopController::class, 'update'])->name('laptop.update');
 Route::get('laptop/delete/{id}', [LaptopController::class, 'delete'])->name('laptop.delete');
+
+// Crud Desktop
+Route::get('desktops', [DesktopConTroller::class, 'index'])->name('desktop.all');
+Route::get('add-desktops', [DesktopConTroller::class, 'adddesktop'])->name('desktop.add');
+Route::post('add-desktops', [DesktopConTroller::class, 'store'])->name('desktop.store');
+Route::get('edit-desktop/{id}', [DesktopConTroller::class, 'edit'])->name('desktop.edit');
+Route::post('update-desktop/{id}', [DesktopConTroller::class, 'update'])->name('desktop.update');
+Route::get('desktop/delete/{id}', [DesktopConTroller::class, 'delete'])->name('desktop.delete');
 
 
