@@ -30,6 +30,6 @@ class CrudUserController extends Controller
                 ->withSuccess('Đăng nhập thành công');
         }
 
-        return redirect("login")->withSuccess('Đăng Nhập Thất Bại!');
+        return redirect("login")->withErrors(['error' => 'Đăng Nhập Thất Bại!']);
     }
 }

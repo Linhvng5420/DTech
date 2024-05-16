@@ -5,13 +5,23 @@
     <section class="login-form">
         <div class="card-login">
             <div class="card-title">
-                <h1>Màn Hình Đăng Nhập</h1>
+                <h1 style="font-size: 35px; font-weight: bold; color: green;">Màn Hình Đăng Nhập</h1>
             </div>
+
+            @if($errors->any())
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <form method="POST" action="{{ route('user.authUser') }}" class="card-body">
                 @csrf
                 <div class="input-group">
-                    <label for="username">Username</label>
+                    <label for="username">User Name</label>
                     <input type="text" id="username" name="username" required autofocus>
                 </div>
                 <div class="input-group">
@@ -28,6 +38,10 @@
 
 
     <style>
+        label {
+            font-weight: bold;
+        }
+
         .login-form {
             width: 100%;
             max-width: 400px;
