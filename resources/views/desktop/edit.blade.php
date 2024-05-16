@@ -26,15 +26,15 @@
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Giá</label>
-                                <input type="number" name="Gia" id="" value="{{$laptop->Gia}}" class="form-control">
+                                <input type="number" name="Gia" id="" value="{{$desktop->Gia}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Ram</label>
-                                <input type="number" name="Ram" id="" value="{{$laptop->Ram}}" class="form-control">
+                                <input type="number" name="Ram" id="" value="{{$desktop->Ram}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Rom</label>
-                                <input type="number" name="Rom" id="" value="{{$laptop->Rom}}" class="form-control">
+                                <input type="number" name="Rom" id="" value="{{$desktop->Rom}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Hãng</label>
