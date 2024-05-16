@@ -107,6 +107,11 @@
         .dropdown-submenu:hover .dropdown-submenu-content {
             display: block;
         }
+
+        /*Login - SignUp*/
+        label {
+            font-weight: bold;
+        }
     </style>
 </head>
 

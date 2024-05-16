@@ -20,9 +20,15 @@ use App\Http\Controllers\PhoneController;
 Route::get('signup', [CrudUserController::class, 'signup'])->name('signup');
 Route::post('signup', [CrudUserController::class, 'postUser'])->name('user.postUser');
 
+// Personal Page
+Route::get('/view', [CrudUserController::class, 'viewUser'])->name('users.view');
+
 // Log in
 Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
+
+// Log Out
+Route::post('/logout', [CrudUserController::class, 'logout'])->name('logout');
 
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -35,7 +41,15 @@ Route::get('/products/screens', [HomeController::class, 'showScreens'])->name('p
 Route::get('/search', [HomeController::class, 'search'])->name('search.products');
 Route::get('/product/{productType}/{id}', [HomeController::class, 'showProductDetail'])->name('product.view');
 
-// CRUD
+// CRUD Users
+Route::prefix('admin/')->group(function () {
+    Route::get('/users', [CrudUserController::class, 'listUser'])->name('users.list');
+    Route::get('/users/delete', [CrudUserController::class, 'deleteUser'])->name('users.delete');
+    Route::get('/users/update', [CrudUserController::class, 'updateUser'])->name('users.updateForm');
+    Route::post('/users/update', [CrudUserController::class, 'postUpdateUser'])->name('users.update');
+});
+
+// CRUD Phone
 Route::prefix('admin/phones')->group(function () {
     Route::get('/', [PhoneController::class, 'index'])->name('admin.phone.index');
     Route::get('/create', [PhoneController::class, 'addphone'])->name('admin.phone.create');

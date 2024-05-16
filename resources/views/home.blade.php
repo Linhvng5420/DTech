@@ -19,10 +19,14 @@
                                      class="card-img-top"
                                      style="max-height: 200px; object-fit: contain;">
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title" style="font-weight: bold; text-align: center;">{{ mb_strtoupper(($productType).' - '.($product->TenSP))}}</h5>
-                                <p class="card-text">{{ $product->MieuTa }}</p>
-                                <p class="card-text">Giá: {{ number_format($product->Gia) }} VND</p>
+                            <div class="card-body" style="display: grid; justify-items: center;">
+                                <h5 class="card-title" style="font-weight: bold; text-align: center;">
+                                    {{ mb_strtoupper(($productType).' - '.($product->TenSP))}}
+                                </h5>
+                                <p class="card-text"
+                                   style="font-style: italic; color: #343a40; ">{{ $product->MieuTa }}</p>
+                                <p class="card-text" style="font-weight:bold; color: #343a40; ">
+                                    Giá: {{ number_format($product->Gia) }} VND</p>
                             </div>
                         </a>
 
@@ -39,10 +43,10 @@
             @endforeach
         </div>
 
-        <!--Phân Trang-->
-        <div class="d-flex justify-content-center mt-4">
-            {{ $products->appends(request()->query())->links('pagination::bootstrap-4') }}
-        </div>
+        {{--        <!--Phân Trang-->--}}
+        {{--        <div class="d-flex justify-content-center mt-4">--}}
+        {{--            {{ $products->appends(request()->query())->links('pagination::bootstrap-4') }}--}}
+        {{--        </div>--}}
     </div>
 @endsection
 
