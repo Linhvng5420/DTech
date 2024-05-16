@@ -9,20 +9,20 @@ use Illuminate\Support\Facades\File;
 class MouseController extends Controller
 {
     // Hiển Thị
-    public function indexEarPhones()
+    public function indexMouses()
     {
-        $earphones = Mouse::paginate(3);
-        return view('earphone.index', compact('earphones'));
+        $mouses = Mouse::paginate(3);
+        return view('mouse.index', compact('mouses'));
     }
 
     // Thêm
-    public function addEarPhones()
+    public function addMouses()
     {
-        return view('earphone.create');
+        return view('mouse.create');
     }
 
     // Store
-    public function storeEarPhones(Request $request)
+    public function storeMouses(Request $request)
     {
         $request->validate([
             'TenSP' => 'required',
@@ -33,33 +33,33 @@ class MouseController extends Controller
             'Hang' => 'required',
         ]);
 
-        $earphone = new Mouse();
-        $earphone->TenSP = $request->input('TenSP');
-        $earphone->MauSac = $request->input('MauSac');
-        $earphone->Gia = $request->input('Gia');
-        $earphone->MieuTa = $request->input('MieuTa', '');
-        $earphone->Hang = $request->input('Hang');
+        $mouse = new Mouse();
+        $mouse->TenSP = $request->input('TenSP');
+        $mouse->MauSac = $request->input('MauSac');
+        $mouse->Gia = $request->input('Gia');
+        $mouse->MieuTa = $request->input('MieuTa', '');
+        $mouse->Hang = $request->input('Hang');
 
         if ($request->hasFile('HinhAnh')) {
             $file = $request->file('HinhAnh');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move('uploads/earphone/', $filename);
-            $earphone->HinhAnh = $filename;
+            $file->move('uploads/mouse/', $filename);
+            $mouse->HinhAnh = $filename;
         }
 
-        $earphone->save();
-        return redirect()->route('admin.earphone.index')->with('status', 'Thêm Mouse thành công!');
+        $mouse->save();
+        return redirect()->route('admin.mouse.index')->with('status', 'Thêm Mouse thành công!');
     }
 
     // Sửa
-    public function editEarPhones($id)
+    public function editMouses($id)
     {
-        $earphone = Mouse::find($id);
-        return view('earphone.edit', compact('earphone'));
+        $mouse = Mouse::find($id);
+        return view('mouse.edit', compact('mouse'));
     }
 
-    public function updateEarPhones(Request $request, $id)
+    public function updateMouses(Request $request, $id)
     {
         $request->validate([
             'TenSP' => 'required',
@@ -70,47 +70,47 @@ class MouseController extends Controller
             'Hang' => 'required',
         ]);
 
-        $earphone = Mouse::find($id);
-        if (!$earphone) {
-            return redirect()->route('admin.earphone.index')->with('error', 'Sản phẩm không tồn tại.');
+        $mouse = Mouse::find($id);
+        if (!$mouse) {
+            return redirect()->route('admin.mouse.index')->with('error', 'Sản phẩm không tồn tại.');
         }
 
-        $earphone->TenSP = $request->input('TenSP');
-        $earphone->MauSac = $request->input('MauSac');
-        $earphone->Gia = $request->input('Gia');
-        $earphone->MieuTa = $request->input('MieuTa', '');
-        $earphone->Hang = $request->input('Hang');
+        $mouse->TenSP = $request->input('TenSP');
+        $mouse->MauSac = $request->input('MauSac');
+        $mouse->Gia = $request->input('Gia');
+        $mouse->MieuTa = $request->input('MieuTa', '');
+        $mouse->Hang = $request->input('Hang');
 
         if ($request->hasFile('HinhAnh')) {
-            $oldImage = 'uploads/earphone/' . $earphone->HinhAnh;
+            $oldImage = 'uploads/mouse/' . $mouse->HinhAnh;
             if (File::exists($oldImage)) {
                 File::delete($oldImage);
             }
             $file = $request->file('HinhAnh');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move('uploads/earphone/', $filename);
-            $earphone->HinhAnh = $filename;
+            $file->move('uploads/mouse/', $filename);
+            $mouse->HinhAnh = $filename;
         }
 
-        $earphone->save();
-        return redirect()->route('admin.earphone.index')->with('status', 'Cập nhật Sản phẩm thành công!');
+        $mouse->save();
+        return redirect()->route('admin.mouse.index')->with('status', 'Cập nhật Sản phẩm thành công!');
     }
 
     // Xóa
-    public function deleteEarPhones($id)
+    public function deleteMouses($id)
     {
-        $earphone = Mouse::find($id);
-        if (!$earphone) {
+        $mouse = Mouse::find($id);
+        if (!$mouse) {
             return redirect()->back()->with('error', 'Không tồn tại sản phẩm');
         }
 
-        $hinhanh = 'uploads/earphone/' . $earphone->HinhAnh;
+        $hinhanh = 'uploads/mouse/' . $mouse->HinhAnh;
         if (File::exists($hinhanh)) {
             File::delete($hinhanh);
         }
-        $earphone->delete();
-        return redirect()->route('admin.earphone.index')->with('status', 'Đã xóa sản phẩm');
+        $mouse->delete();
+        return redirect()->route('admin.mouse.index')->with('status', 'Đã xóa sản phẩm');
     }
 }
 
