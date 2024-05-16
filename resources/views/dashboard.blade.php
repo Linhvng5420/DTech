@@ -39,7 +39,7 @@
             <div class="dropdown-submenu">
                 <a>Sản Phẩm</a>
                 <div class="dropdown-submenu-content">
-                    <a href="">Desktop</a>
+                    <a href="{{route('desktop.all')}}">Desktop</a>
                     <a href="{{route('admin.earphone.index')}}">EarPhone</a>
                     <a href="{{route('laptop.all')}}">Laptop</a>
                     <a href="{{ route('admin.phone.index') }}">Phone</a>
