@@ -4,123 +4,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Tech</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.46/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     @stack('styles')
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: center;
-            margin: 0 5%;
-            border: 1px solid black;
-            align-items: center;
-        }
-
-        .navbar a, p {
-            color: black;
-            text-decoration: none;
-            padding: 20px 20px;
-            font-weight: bold;
-        }
-
-        .navbar p {
-            font-size: 30px;
-            position: absolute;
-            left: 100px;
-            color: red;
-        }
-
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-            border-radius: 5px;
-        }
-
-        footer {
-            display: grid;
-            margin: 1% 5%;
-            padding: 1%;
-            border: 1px solid black;
-            justify-items: center;
-        }
-
-        .content-yield {
-            display: grid;
-            justify-content: center;
-        }
-
-        /* Phần tổng của dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block; /* Cho phép các mục khác trong navbar được hiển thị cùng một hàng */
-        }
-
-        /* Nội dung của dropdown */
-        .dropdown-content {
-            display: none; /* Ẩn dropdown menu */
-            position: absolute; /* Đảm bảo dropdown hiển thị với vị trí tuyệt đối */
-            background-color: #f9f9f9; /* Màu nền cho dropdown */
-            min-width: 160px; /* Rộng tối thiểu */
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Thêm shadow */
-            z-index: 1; /* Đảm bảo dropdown ở trên các phần tử khác */
-        }
-
-        /* Hiển thị khi được hover */
-        .dropdown:hover .dropdown-content {
-            display: block; /* Hiển thị dropdown menu */
-        }
-
-        /* Style lại links */
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none; /* Bỏ gạch dưới */
-            display: block; /* Hiển thị đầy đủ chiều rộng */
-        }
-
-        /* Thay đổi màu sắc khi được hover */
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-    </style>
 </head>
 
 <body>
 
 <nav class="navbar">
+    <!-- Title -->
     <p>D-Tech</p>
 
-    {{--  L-S  --}}
+    <!-- Hàng 1 -->
+    <!-- Users -->
     <a href="#">Đăng Nhập</a>
     <a href="#">Đăng Ký</a>
-    <a href="#">Đăng Xuất</a>
 
-    {{--  Home  --}}
+    <!-- Home -->
     <a href="#">Home</a>
 
-    {{--  User  --}}
+    <!-- User -->
     <a href="#">Trang Cá Nhân</a>
 
-    {{--  Cart  --}}
+    <!-- Cart -->
     <a href="#">Giỏ Hàng</a>
 
-    {{-- CRUD --}}
+    <!-- CRUD -->
     <div class="dropdown">
         <a href="#">Quản Trị</a>
         <div class="dropdown-content">
-            <a href="#">Sản Phẩm</a>
-            <a href="#">User</a>
+            <div class="dropdown-submenu">
+                <a href="#">Sản Phẩm</a>
+                <div class="dropdown-submenu-content">
+                    <a href="">Desktop</a>
+                    <a href="{{route('admin.earphone.index')}}">EarPhone</a>
+                    <a href="">Laptop</a>
+                    <a href="">Phone</a>
+                    <a href="">Mouse</a>
+                    <a href="">Screen</a>
+                </div>
+            </div>
+            <a href="">User</a>
         </div>
     </div>
+
+    <a href="#">Đăng Xuất</a>
 </nav>
+
+<!-- Chỉ hiển thụi subnav khi ở trang sp-->
+@if(request()->is('products') || request()->is('products/*') || request()->is('/') || request()->is('search') || request()->is('search/*'))
+    @include('navsub')
+@endif
 
 <div class="content-yield">
     @yield('content')
     @yield('content_update')
 </div>
 
+{{--product-card với vuejs--}}
+@if(request()->is('products') || request()->is('products/*') || request()->is('/') || request()->is('search') || request()->is('search/*'))
+    <section id="app">
+        <div class="container">
+            <div class="row">
+                <product-card v-for="product in products" :key="product.id" :product="product"></product-card>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4">
+                {{ $products->appends(request()->query())->links('pagination::bootstrap-4') }}
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const app = Vue.createApp({});
+        app.component('product-card', require('./components/product-card.vue').default);
+
+        app.mount('#app');
+    </script>
+@endif
+
 <footer><strong>Team D</strong></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5% 2% 5%;
+        border: 1px solid black;
+        position: relative;
+    }
+
+    .navbar p {
+        margin: 0;
+        padding: 5px;
+        font-size: 30px;
+        font-weight: bold;
+        color: red;
+        position: absolute;
+        left: 10px;
+    }
+
+    .navbar a {
+        color: black;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-weight: bold;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+        border-radius: 5px;
+    }
+
+    footer {
+        display: grid;
+        margin: 1% 5%;
+        padding: 1%;
+        border: 1px solid black;
+        justify-items: center;
+    }
+
+    .content-yield {
+        display: grid;
+        justify-content: center;
+    }
+
+    /* dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu-content {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-submenu:hover .dropdown-submenu-content {
+        display: block;
+    }
+
+    /*Login - SignUp*/
+    label {
+        font-weight: bold;
+    }
+</style>
 </body>
 </html>
