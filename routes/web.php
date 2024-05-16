@@ -33,6 +33,7 @@ Route::get('/products/mice', [HomeController::class, 'showMice'])->name('product
 Route::get('/products/earphones', [HomeController::class, 'showEarphones'])->name('products.earphones');
 Route::get('/products/screens', [HomeController::class, 'showScreens'])->name('products.screens');
 Route::get('/search', [HomeController::class, 'search'])->name('search.products');
+Route::get('/product/{productType}/{id}', [HomeController::class, 'showProductDetail'])->name('product.view');
 
 // CRUD
 Route::prefix('admin/phones')->group(function () {

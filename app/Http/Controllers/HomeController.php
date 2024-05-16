@@ -132,4 +132,41 @@ class HomeController extends Controller
 
         return view('home', ['products' => $paginatedItems, 'type' => 'products']);
     }
+
+    public function showProductDetail($productType, $id)
+    {
+        $productModel = null;
+
+        switch ($productType) {
+            case 'phone':
+                $productModel = Phone::class;
+                break;
+            case 'laptop':
+                $productModel = Laptop::class;
+                break;
+            case 'desktop':
+                $productModel = Desktop::class;
+                break;
+            case 'mouse':
+                $productModel = Mouse::class;
+                break;
+            case 'earphone':
+                $productModel = Earphone::class;
+                break;
+            case 'screen':
+                $productModel = Screen::class;
+                break;
+            default:
+                return redirect()->back()->with('message', 'Loại sản phẩm không hợp lệ');
+        }
+
+        // Tìm kiếm sản phẩm dựa trên ID và model đã xác định
+        $product = $productModel::find($id);
+
+        if ($product) {
+            return view('productsview', compact('product', 'productType'));
+        } else {
+            return redirect()->back()->with('message', 'Sản phẩm không tồn tại');
+        }
+    }
 }

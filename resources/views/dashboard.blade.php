@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D-Tech</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.46/dist/vue.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     @stack('styles')
     <style>
         body {
@@ -17,7 +18,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 1% 5%;
+            margin: 0 5% 2% 5%;
             border: 1px solid black;
             position: relative;
         }
@@ -35,7 +36,7 @@
         .navbar a {
             color: black;
             text-decoration: none;
-            padding: 10px 10px;
+            padding: 10px 20px;
             font-weight: bold;
         }
 
@@ -184,6 +185,8 @@
 @endif
 
 <footer><strong>Team D</strong></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </body>
 </html>
 
