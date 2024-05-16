@@ -46,7 +46,7 @@
                     <a href="">Screen</a>
                 </div>
             </div>
-            <a href="#">User</a>
+            <a href="{{ route('users.list') }}">User</a>
         </div>
     </div>
 
