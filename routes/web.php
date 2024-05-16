@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ScreenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Crud EarPhone
+Route::prefix('admin/screens')->group(function () {
+    Route::get('/', [ScreenController::class, 'indexScreen'])->name('admin.screen.index');
+    Route::get('/create', [ScreenController::class, 'addScreen'])->name('admin.screen.create');
+    Route::post('/store', [ScreenController::class, 'storeScreen'])->name('admin.screen.store');
+    Route::get('/edit/{id}', [ScreenController::class, 'editScreen'])->name('admin.screen.edit');
+    Route::post('/update/{id}', [ScreenController::class, 'updateScreen'])->name('admin.screen.update');
+    Route::get('/delete/{id}', [ScreenController::class, 'deleteScreen'])->name('admin.screen.delete');
 });
+
+
