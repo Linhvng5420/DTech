@@ -9,8 +9,8 @@
                 @endif
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h3>Earphone CRUD</h3>
-                        <a href="{{ route('admin.earphone.create') }}" class="btn btn-primary">Thêm Sản Phẩm</a>
+                        <h3>Mouse CRUD</h3>
+                        <a href="{{ route('admin.mouse.create') }}" class="btn btn-primary">Thêm Sản Phẩm</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
@@ -27,18 +27,21 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($earphones as $earphone)
+                            @foreach($mouses as $mouse)
                                 <tr>
-                                    <td>{{ $earphone->id }}</td>
-                                    <td>{{ $earphone->TenSP }}</td>
-                                    <td><img src="{{ asset('uploads/earphone/' . $earphone->HinhAnh) }}" width="70px" height="70px" alt="Ảnh sản phẩm"></td>
-                                    <td>{{ $earphone->MauSac }}</td>
-                                    <td>{{ $earphone->Gia }}</td>
-                                    <td>{{ $earphone->MieuTa }}</td>
-                                    <td>{{ $earphone->Hang }}</td>
+                                    <td>{{ $mouse->id }}</td>
+                                    <td>{{ $mouse->TenSP }}</td>
+                                    <td><img src="{{ asset('uploads/mouse/' . $mouse->HinhAnh) }}" width="70px"
+                                             height="70px" alt="Ảnh sản phẩm"></td>
+                                    <td>{{ $mouse->MauSac }}</td>
+                                    <td>{{ $mouse->Gia }}</td>
+                                    <td>{{ $mouse->MieuTa }}</td>
+                                    <td>{{ $mouse->Hang }}</td>
                                     <td>
-                                        <a href="{{ route('admin.earphone.edit', ['id' => $earphone->id]) }}" class="btn btn-primary btn-sm">Sửa</a>
-                                        <a href="{{ route('admin.earphone.delete', ['id' => $earphone->id]) }}" class="btn btn-danger btn-sm">Xóa</a>
+                                        <a href="{{ route('admin.mouse.edit', ['id' => $mouse->id]) }}"
+                                           class="btn btn-primary btn-sm">Sửa</a>
+                                        <a href="{{ route('admin.mouse.delete', ['id' => $mouse->id]) }}"
+                                           class="btn btn-danger btn-sm">Xóa</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -49,16 +52,16 @@
                     <!-- Phân trang -->
                     <div class="card-footer d-flex justify-content-center">
                         <ul class="pagination pagination-sm">
-                            <li class="page-item {{ $earphones->previousPageUrl() ? '' : 'disabled' }}">
-                                <a class="page-link" href="{{ $earphones->previousPageUrl() }}">Previous</a>
+                            <li class="page-item {{ $mouses->previousPageUrl() ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $mouses->previousPageUrl() }}">Previous</a>
                             </li>
-                            @for ($i = 1; $i <= $earphones->lastPage(); $i++)
-                                <li class="page-item {{ $earphones->currentPage() == $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $earphones->url($i) }}">{{ $i }}</a>
+                            @for ($i = 1; $i <= $mouses->lastPage(); $i++)
+                                <li class="page-item {{ $mouses->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $mouses->url($i) }}">{{ $i }}</a>
                                 </li>
                             @endfor
-                            <li class="page-item {{ $earphones->nextPageUrl() ? '' : 'disabled' }}">
-                                <a class="page-link" href="{{ $earphones->nextPageUrl() }}">Next</a>
+                            <li class="page-item {{ $mouses->nextPageUrl() ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $mouses->nextPageUrl() }}">Next</a>
                             </li>
                         </ul>
                     </div>

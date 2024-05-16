@@ -6,12 +6,13 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Thêm EarPhone
-                            <a href="{{ route('admin.earphone.index') }}" class="btn btn-danger float-end ml-5">Quay lại</a>
+                        <h3>Thêm Mouse
+                            <a href="{{ route('admin.mouse.index') }}" class="btn btn-danger float-end ml-5">Quay
+                                lại</a>
                         </h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.earphone.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.mouse.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="TenSP">Tên Sản Phẩm</label>
