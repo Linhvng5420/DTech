@@ -39,10 +39,10 @@
                 <a href="#">Sản Phẩm</a>
                 <div class="dropdown-submenu-content">
                     <a href="">Desktop</a>
-                    <a href="{{route('admin.earphone.index')}}">EarPhone</a>
+                    <a href="">EarPhone</a>
                     <a href="">Laptop</a>
                     <a href="">Phone</a>
-                    <a href="">Mouse</a>
+                    <a href="{{route('admin.mouse.index')}}">Mouse</a>
                     <a href="">Screen</a>
                 </div>
             </div>
