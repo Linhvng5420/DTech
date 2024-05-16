@@ -1,7 +1,6 @@
 @extends('dashboard')
 
 @section('content')
-
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
@@ -63,10 +62,8 @@
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
