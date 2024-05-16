@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EarPhoneController;
 use App\Http\Controllers\CrudUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PhoneController;
@@ -57,6 +58,16 @@ Route::prefix('admin/phones')->group(function () {
     Route::get('/edit/{id}', [PhoneController::class, 'edit'])->name('admin.phone.edit');
     Route::post('/update/{id}', [PhoneController::class, 'update'])->name('admin.phone.update');
     Route::get('/delete/{id}', [PhoneController::class, 'delete'])->name('admin.phone.delete');
+});
+
+// Crud EarPhone
+Route::prefix('admin/earphones')->group(function () {
+    Route::get('/', [EarPhoneController::class, 'indexEarPhones'])->name('admin.earphone.index');
+    Route::get('/create', [EarPhoneController::class, 'addEarPhones'])->name('admin.earphone.create');
+    Route::post('/store', [EarPhoneController::class, 'storeEarPhones'])->name('admin.earphone.store');
+    Route::get('/edit/{id}', [EarPhoneController::class, 'editEarPhones'])->name('admin.earphone.edit');
+    Route::post('/update/{id}', [EarPhoneController::class, 'updateEarPhones'])->name('admin.earphone.update');
+    Route::get('/delete/{id}', [EarPhoneController::class, 'deleteEarPhones'])->name('admin.earphone.delete');
 });
 
 
