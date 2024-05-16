@@ -16,7 +16,7 @@ class EarPhoneController extends Controller
     }
 
     // Thêm
-    public function addEarPhones(Request $request)
+    public function addEarPhones()
     {
         return view('earphone.create');
     }
@@ -29,7 +29,7 @@ class EarPhoneController extends Controller
             'HinhAnh' => 'image|mimes:jpg,png|max:4096',
             'MauSac' => 'required',
             'Gia' => 'required|numeric',
-            'MieuTa' => 'nullable',
+            'MieuTa' => 'required',
             'Hang' => 'required',
         ]);
 
@@ -47,6 +47,7 @@ class EarPhoneController extends Controller
             $file->move('uploads/earphone/', $filename);
             $earphone->HinhAnh = $filename;
         }
+
         $earphone->save();
         return redirect()->route('admin.earphone.index')->with('status', 'Thêm EarPhone thành công!');
     }

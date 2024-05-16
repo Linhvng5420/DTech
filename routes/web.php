@@ -18,7 +18,7 @@ use App\Http\Controllers\EarPhoneController;
 Route::prefix('admin/earphones')->group(function () {
     Route::get('/', [EarPhoneController::class, 'indexEarPhones'])->name('admin.earphone.index');
     Route::get('/create', [EarPhoneController::class, 'addEarPhones'])->name('admin.earphone.create');
-    Route::post('/create', [EarPhoneController::class, 'storeEarPhones'])->name('admin.earphone.store');
+    Route::post('/store', [EarPhoneController::class, 'storeEarPhones'])->name('admin.earphone.store');
     Route::get('/edit/{id}', [EarPhoneController::class, 'editEarPhones'])->name('admin.earphone.edit');
     Route::post('/update/{id}', [EarPhoneController::class, 'updateEarPhones'])->name('admin.earphone.update');
     Route::get('/delete/{id}', [EarPhoneController::class, 'deleteEarPhones'])->name('admin.earphone.delete');

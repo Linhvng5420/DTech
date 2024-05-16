@@ -6,34 +6,35 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Thêm EarPhone<a href="{{ route('admin.earphone.index')}}"
-                                            class="btn btn-danger float-end ml-5">Quay lại</a></h3>
+                        <h3>Thêm EarPhone
+                            <a href="{{ route('admin.earphone.index') }}" class="btn btn-danger float-end ml-5">Quay lại</a>
+                        </h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.earphone.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('admin.earphone.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
-                                <label for="">Tên Sản Phẩm</label>
+                                <label for="TenSP">Tên Sản Phẩm</label>
                                 <input type="text" name="TenSP" class="form-control">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="">Màu Sắc</label>
+                                <label for="MauSac">Màu Sắc</label>
                                 <input type="text" name="MauSac" class="form-control">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="">Giá</label>
+                                <label for="Gia">Giá</label>
                                 <input type="number" name="Gia" class="form-control">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="">Miêu Tả</label>
-                                <textarea type="text" name="MieuTa" class="form-control"></textarea>
+                                <label for="MieuTa">Miêu Tả</label>
+                                <textarea name="MieuTa" class="form-control"></textarea>
                             </div>
                             <div class="form-group mb-3">
-                                <label for="">Hãng</label>
+                                <label for="Hang">Hãng</label>
                                 <input type="text" name="Hang" class="form-control">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="">Hình Ảnh</label>
+                                <label for="HinhAnh">Hình Ảnh</label>
                                 <input type="file" name="HinhAnh" class="form-control">
                             </div>
                             <div class="form-group mb-3">
