@@ -10,7 +10,7 @@
                 @endif
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h3>earphone CRUD</h3>
+                        <h3>Earphone CRUD</h3>
                         <a href="{{ route('admin.earphone.create') }}" class="btn btn-primary">Thêm Sản Phẩm</a>
                     </div>
                     <div class="card-body">
@@ -32,18 +32,14 @@
                                 <tr>
                                     <td>{{ $earphone->id }}</td>
                                     <td>{{ $earphone->TenSP }}</td>
-                                    <td><img src="{{ asset('uploads/earphone/' . $earphone->HinhAnh) }}" width="70px"
-                                             height="70px"
-                                             alt="Ảnh sản phẩm"></td>
+                                    <td><img src="{{ asset('uploads/earphone/' . $earphone->HinhAnh) }}" width="70px" height="70px" alt="Ảnh sản phẩm"></td>
                                     <td>{{ $earphone->MauSac }}</td>
                                     <td>{{ $earphone->Gia }}</td>
                                     <td>{{ $earphone->MieuTa }}</td>
                                     <td>{{ $earphone->Hang }}</td>
                                     <td>
-                                        <a href="{{ route('admin.earphone.edit', ['id' => $earphone->id]) }}"
-                                           class="btn btn-primary btn-sm">Sửa</a>
-                                        <a href="{{ route('admin.earphone.delete', ['id' => $earphone->id]) }}"
-                                           class="btn btn-danger btn-sm">Xóa</a>
+                                        <a href="{{ route('admin.earphone.edit', ['id' => $earphone->id]) }}" class="btn btn-primary btn-sm">Sửa</a>
+                                        <a href="{{ route('admin.earphone.delete', ['id' => $earphone->id]) }}" class="btn btn-danger btn-sm">Xóa</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -54,16 +50,16 @@
                     <!-- Phân trang -->
                     <div class="card-footer d-flex justify-content-center">
                         <ul class="pagination pagination-sm">
-                            <li class="page-item {{ $earphone->previousPageUrl() ? '' : 'disabled' }}">
-                                <a class="page-link" href="{{ $earphone->previousPageUrl() }}">Previous</a>
+                            <li class="page-item {{ $earphones->previousPageUrl() ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $earphones->previousPageUrl() }}">Previous</a>
                             </li>
-                            @for ($i = 1; $i <= $earphone->lastPage(); $i++)
-                                <li class="page-item {{ $earphone->currentPage() == $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $earphone->url($i) }}">{{ $i }}</a>
+                            @for ($i = 1; $i <= $earphones->lastPage(); $i++)
+                                <li class="page-item {{ $earphones->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $earphones->url($i) }}">{{ $i }}</a>
                                 </li>
                             @endfor
-                            <li class="page-item {{ $earphone->nextPageUrl() ? '' : 'disabled' }}">
-                                <a class="page-link" href="{{ $earphone->nextPageUrl() }}">Next</a>
+                            <li class="page-item {{ $earphones->nextPageUrl() ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $earphones->nextPageUrl() }}">Next</a>
                             </li>
                         </ul>
                     </div>

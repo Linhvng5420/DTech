@@ -10,11 +10,19 @@ class EarPhoneController extends Controller
 {
     public function addEarPhones(Request $request)
     {
-        return view('phone.create');
+        return view('earphone.create'); // Đảm bảo đúng tên view
     }
 
     public function storeEarPhones(Request $request)
     {
+        $request->validate([
+            'TenSP' => 'required',
+            'MauSac' => 'required',
+            'Gia' => 'required|numeric',
+            'Hang' => 'required',
+            'HinhAnh' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validate file
+        ]);
+
         $earPhone = new EarPhone();
         $earPhone->TenSP = $request->input('TenSP');
         $earPhone->MauSac = $request->input('MauSac');
@@ -30,12 +38,19 @@ class EarPhoneController extends Controller
             $earPhone->HinhAnh = $filename;
         }
         $earPhone->save();
-        return redirect()->back()->with('status', 'Thêm EarPhone Thành công!');
+        return redirect()->route('admin.earphone.index')->with('status', 'Thêm EarPhone thành công!');
     }
-
 
     public function updateEarPhones(Request $request, $id)
     {
+        $request->validate([
+            'TenSP' => 'required',
+            'MauSac' => 'required',
+            'Gia' => 'required|numeric',
+            'Hang' => 'required',
+            'HinhAnh' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validate file
+        ]);
+
         $earPhone = EarPhone::find($id);
         $earPhone->TenSP = $request->input('TenSP');
         $earPhone->MauSac = $request->input('MauSac');
@@ -56,21 +71,21 @@ class EarPhoneController extends Controller
         }
 
         $earPhone->save();
-        return redirect()->back()->with('status', 'Cập nhật Sản phẩm Thành Công!');
+        return redirect()->route('admin.earphone.index')->with('status', 'Cập nhật Sản phẩm thành công!');
     }
 
     public function indexEarPhones()
     {
-        $earPhones = EarPhone::paginate(3);
-        return view('EarPhone.index', compact('earPhones'));
+        $earphones = EarPhone::paginate(3);
+        return view('earphone.index', compact('earphones'));
     }
+
 
     public function editEarPhones($id)
     {
         $earPhone = EarPhone::find($id);
         return view('earphone.edit', compact('earPhone'));
     }
-
 
     public function deleteEarPhones($id)
     {
@@ -83,6 +98,6 @@ class EarPhoneController extends Controller
             File::delete($hinhanh);
         }
         $earPhone->delete();
-        return redirect()->back()->with('status', 'Đã Xóa Sản Phẩm');
+        return redirect()->route('admin.earphone.index')->with('status', 'Đã xóa sản phẩm');
     }
 }
