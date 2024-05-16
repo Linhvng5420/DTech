@@ -31,8 +31,8 @@
                                 <input type="number" name="Gia" id="" value="{{$earphone->Gia}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
-                                <label for="">Ram</label>
-                                <input type="number" name="MieuTa" id="" value="{{$earphone->MieuTa}}" class="form-control">
+                                <label for="">Miêu Tả</label>
+                                <input type="text" name="MieuTa" id="" value="{{$earphone->MieuTa}}" class="form-control">
                             </div>
                             <div class="form-group mv-3">
                                 <label for="">Hãng</label>
