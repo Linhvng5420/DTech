@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CrudUserController extends Controller
 {
+
     // Đăng ký
     public function signup()
     {
@@ -23,28 +24,29 @@ class CrudUserController extends Controller
             'email' => 'required|email|unique:users',
             'password1' => 'required|min:4',
             'password2' => 'required|min:4|same:password1', // xác thực p2 = p1
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:6144', // kiểm tra ảnh avatar
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:6144',
         ]);
 
         $data = $request->all();
 
-        // Avatar upload
-        if($request->hasFile('avatar')){
-            $imageName = time().'.'.$request->avatar->extension();
-
+        // Avatar
+        if ($request->hasFile('avatar')) {
+            $imageName = time() . '.' . $request->avatar->extension();
             $request->avatar->move(public_path('images'), $imageName);
-
             $data['profile_image'] = $imageName;
         }
 
-        $check = User::create([
-            'username' => $data['username'],
-            'email' => $data['email'],
-            'profile_image' => $data['profile_image'],
-            'password' => Hash::make($data['password1'])
-        ]);
+        try {
+            User::create([
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'profile_image' => isset($data['profile_image']) ? $data['profile_image'] : null,
+                'password' => Hash::make($data['password1'])
+            ]);
 
-        return redirect("#")->withSuccess('Đăng ký thành công');
+            return redirect("login")->withSuccess('Đăng ký thành công');
+        } catch (\Exception $e) {
+            return redirect("register")->withErrors(['error' => 'Đăng ký thất bại!']);
+        }
     }
-
 }
