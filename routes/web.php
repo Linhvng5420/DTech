@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ScreenController;
 use App\Http\Controllers\MouseController;
 use App\Http\Controllers\EarPhoneController;
 use App\Http\Controllers\CrudUserController;
@@ -81,4 +82,13 @@ Route::prefix('admin/mouses')->group(function () {
     Route::get('/delete/{id}', [MouseController::class, 'deleteMouses'])->name('admin.mouse.delete');
 });
 
+// Crud Screen
+Route::prefix('admin/screens')->group(function () {
+    Route::get('/', [ScreenController::class, 'indexScreen'])->name('admin.screen.index');
+    Route::get('/create', [ScreenController::class, 'addScreen'])->name('admin.screen.create');
+    Route::post('/store', [ScreenController::class, 'storeScreen'])->name('admin.screen.store');
+    Route::get('/edit/{id}', [ScreenController::class, 'editScreen'])->name('admin.screen.edit');
+    Route::post('/update/{id}', [ScreenController::class, 'updateScreen'])->name('admin.screen.update');
+    Route::get('/delete/{id}', [ScreenController::class, 'deleteScreen'])->name('admin.screen.delete');
+});
 

@@ -26,7 +26,7 @@
     <a href="{{ route('home') }}">Home</a>
 
     <!-- User -->
-    <a href="{{ route('users.view', ['id' => Auth::user()->id]) }}">Trang Cá Nhân</a>
+{{--    <a href="{{ route('users.view', ['id' => Auth::user()->id]) }}">Trang Cá Nhân</a>--}}
 
     <!-- Cart -->
     <a href="#">Giỏ Hàng</a>
@@ -43,7 +43,7 @@
                     <a href="">Laptop</a>
                     <a href="{{ route('admin.phone.index') }}">Phone</a>
                     <a href="{{route('admin.mouse.index')}}">Mouse</a>
-                    <a href="">Screen</a>
+                    <a href="{{route('admin.screen.index')}}">Screen</a>
                 </div>
             </div>
             <a href="{{ route('users.list') }}">User</a>
