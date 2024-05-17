@@ -139,9 +139,18 @@ class CrudUserController extends Controller
     public function deleteUser(Request $request)
     {
         $user_id = $request->get('id');
-        $user = User::destroy($user_id);
+        $user = User::find($user_id);
 
-        return redirect()->route('users.list')->with('status', 'Đã Xóa User! ID: ' . $user_id);
+        if ($user && $user->role=='admin' && $user_id==1) {
+            return redirect()->route('users.list')->withErrors(['error' => 'Không thể xóa Admin!']);
+        }
+
+        if ($user) {
+            $user->delete();
+            return redirect()->route('users.list')->with('status', 'Đã Xóa User! ID: ' . $user_id);
+        }
+
+        return redirect()->route('users.list')->withErrors(['error' => 'Người dùng không tồn tại!']);
     }
 
     public function logout(Request $request)

@@ -7,6 +7,15 @@
             @if (session('status'))
                 <div class="alert alert-success" role="alert">{{ session('status') }}</div>
             @endif
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <table>
                 <thead>
                 <tr>
@@ -36,7 +45,11 @@
                         <td>
                             <a href="{{ route('users.view', ['id' => $user->id]) }}">View</a> |
                             <a href="{{ route('users.updateForm', ['id' => $user->id]) }}">Update</a> |
-                            <a href="{{ route('users.delete', ['id' => $user->id]) }}">Delete</a>
+                            <form action="{{ route('users.delete', ['id' => $user->id]) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" onclick="return confirm('Bạn có chắc chắn muốn xóa người dùng này?');" style="background:none; border:none; color:red; cursor:pointer;">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
