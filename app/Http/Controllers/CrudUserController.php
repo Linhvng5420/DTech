@@ -32,7 +32,7 @@ class CrudUserController extends Controller
         // Avatar
         if ($request->hasFile('avatar')) {
             $imageName = time() . '.' . $request->avatar->extension();
-            $request->avatar->move(public_path('images'), $imageName);
+            $request->avatar->move(public_path('uploads/avatar'), $imageName);
             $data['profile_image'] = $imageName;
         }
 
@@ -44,7 +44,7 @@ class CrudUserController extends Controller
                 'password' => Hash::make($data['password1'])
             ]);
 
-            return redirect("login")->withSuccess('Đăng ký thành công');
+            return redirect("login")->with('status', 'Tạo Tài Khoản Thành Công!');
         } catch (\Exception $e) {
             return redirect("register")->withErrors(['error' => 'Đăng ký thất bại!']);
         }
@@ -70,7 +70,7 @@ class CrudUserController extends Controller
                 ->withSuccess('Đăng nhập thành công');
         }
 
-        return redirect("login")->withErrors(['error' => 'Đăng Nhập Thất Bại!']);
+        return redirect("home")->with('status', 'Đăng nhập thành công!');
     }
 
     // List

@@ -34,7 +34,7 @@ class PhoneController extends Controller
             $phone->HinhAnh = $filename;
         }
         $phone->save();
-        return redirect()->back()->with('status', 'Thêm Phone Thành công!');
+        return redirect()->route('admin.phone.index')->with('status', 'Thêm thành công!');
     }
 
 

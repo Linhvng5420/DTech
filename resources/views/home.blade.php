@@ -31,13 +31,9 @@
                         </a>
 
                         <!--Nút Giỏ Hàng (Chưa action)-->
-                        <form action="#" method="POST">
-                            @csrf
-                            <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <button type="submit" class="btn btn-primary btn-sm float-right">
-                                <i class="fas fa-plus"></i> Thêm vào giỏ hàng
-                            </button>
-                        </form>
+                        <button class="btn btn-primary btn-sm float-right">
+                            <i class="fas fa-plus"></i> Thêm vào giỏ hàng
+                        </button>
                     </div>
                 </div>
             @endforeach

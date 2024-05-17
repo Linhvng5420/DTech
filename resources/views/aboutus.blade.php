@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu - D-Tech</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+@extends('dashboard')
+
+@section('content')
 <header class="bg-dark text-white py-3">
     <div class="container text-center">
         <h1>About US</h1>
@@ -25,7 +19,7 @@
                     <li>Giỏ hàng trực tuyến tiện lợi cho việc mua sắm.</li>
                     <li>Tùy chọn thanh toán trực tuyến.</li>
                 </ul>
-                <h3>Gặp gỡ đội ngũ</h3>
+                <h3>Những Người Thực Hiện</h3>
                 <div class="row">
                     <div class="col-md-6">
                         <h4>Nguyễn Văn Linh</h4>
@@ -48,13 +42,8 @@
         </div>
     </div>
 </main>
-<footer class="bg-dark text-white py-4">
-    <div class="container text-center">
-        <p>&copy; 2024 D-Tech. Bảo lưu mọi quyền.</p>
-    </div>
-</footer>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+@endsection
