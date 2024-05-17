@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,12 +15,25 @@ class AdminUserSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert([
-            'username' => 'admin',
-            'email' => 'admin@tdc.vn',
-            'profile_image' => 'default_admin.png',
-            'password' => Hash::make('1234'),
-            'role' => 'admin',
-        ]);
+        $users = [
+            [
+                'username' => 'admin',
+                'email' => 'admin@tdc.vn',
+                'profile_image' => 'default_admin.png',
+                'password' => Hash::make('1234'),
+                'role' => 'admin',
+            ],
+            [
+                'username' => 'admin1',
+                'email' => 'admin1@tdc.vn',
+                'profile_image' => 'default_admin.png',
+                'password' => Hash::make('1234'),
+                'role' => 'admin',
+            ]
+        ];
+
+        foreach ($users as $user) {
+            DB::table('users')->insert($user);
+        }
     }
 }
