@@ -37,10 +37,10 @@ Route::get('/users/view', [CrudUserController::class, 'viewUser'])->name('users.
 Route::get('/users/update', [CrudUserController::class, 'updateUser'])->name('users.updateForm');
 
 // CRUD Users
-Route::prefix('admin/')->group(function () {
+Route::prefix('admin')->group(function () {
     Route::get('/users', [CrudUserController::class, 'listUser'])->name('users.list');
-    Route::get('/users/delete', [CrudUserController::class, 'deleteUser'])->name('users.delete');
-    Route::post('/users/update', [CrudUserController::class, 'postUpdateUser'])->name('users.update');
+    Route::delete('/users/delete', [CrudUserController::class, 'deleteUser'])->name('users.delete');
+    Route::put('/users/update', [CrudUserController::class, 'postUpdateUser'])->name('users.update');
 });
 
 // Home

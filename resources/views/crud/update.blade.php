@@ -6,8 +6,9 @@
             <div class="card-title">
                 <h2 style="color: #0069d9;">Thay Đổi Thông Tin User</h2>
             </div>
-            <form method="POST" action="{{ route('users.update') }}" class="card-body" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('users.update', ['id' => $user->id]) }}" class="card-body" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="input-group">
                     <label for="username">User Name</label>
                     <input type="text" id="username" name="username" value="{{ $user->username }}" required autofocus>
@@ -19,35 +20,29 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="password">New Password</label>
-                    <input type="password" id="newpassword1" name="newpassword1" required>
+                    <label for="newpassword1">New Password</label>
+                    <input type="password" id="newpassword1" name="newpassword1">
                 </div>
 
                 <div class="input-group">
-                    <label for="password">New Password Again</label>
-                    <input type="password" id="newpassword2" name="newpassword2" required>
+                    <label for="newpassword2">New Password Again</label>
+                    <input type="password" id="newpassword2" name="newpassword2">
                 </div>
 
                 <div class="input-group">
                     <label for="image">Avatar Image</label>
                     <input type="file" id="image" name="image" onchange="previewImage(event)">
                     @if($user->profile_image)
-                        <img src="{{ asset('uploads/avatar/' . $user->profile_image) }}"
-                             alt="{{ $user->username }}"
-                             class="profile-image"
-                             style="max-height: 100px; object-fit: contain; border-radius: 50%; margin-top: 10px; border: black double 5px;">
+                        <img src="{{ asset('uploads/avatar/' . $user->profile_image) }}" alt="{{ $user->username }}" class="profile-image" style="max-height: 100px; object-fit: contain; border-radius: 50%; margin-top: 10px; border: black double 5px;">
                     @else
                         <i class="fas fa-user-circle fa-10x"></i>
                     @endif
-
                     <div class="image-preview">
-                        <img id="preview" style="max-width: 100px; margin-top: 10px;
-                        margin-left: 100px; border: #5cb85c double 5px" ;>
+                        <img id="preview" style="max-width: 100px; margin-top: 10px; margin-left: 100px; border: #5cb85c double 5px;">
                     </div>
                 </div>
 
                 <button type="submit" class="btn-update">Cập Nhật</button>
-
             </form>
         </div>
     </section>
@@ -117,5 +112,4 @@
             font-size: x-large;
         }
     </style>
-
 @endsection
