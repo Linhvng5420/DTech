@@ -24,7 +24,7 @@ class CrudUserController extends Controller
             'email' => 'required|email|unique:users',
             'password1' => 'required|min:4',
             'password2' => 'required|min:4|same:password1', // xác thực p2 = p1
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:6144',
+            'avatar' => 'required|image|mimes:jpeg,png|max:6144',
         ]);
 
         $data = $request->all();
@@ -112,7 +112,7 @@ class CrudUserController extends Controller
             'email' => 'required|email|unique:users,email,' . $user_id,
             'newpassword1' => 'required|min:4',
             'newpassword2' => 'required|min:4|same:newpassword1', // xác thực p2=p1
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // validate image
+            'image' => 'image|mimes:jpeg,png|max:6048',
         ]);
 
         $user->username = $request->get('username');
@@ -122,9 +122,9 @@ class CrudUserController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('/images');
+            $destinationPath = public_path('/uploads/avatar');
             $image->move($destinationPath, $imageName);
-            $user->profile_image = '/images/' . $imageName;
+            $user->profile_image = '/uploads/avatar' . $imageName;
         }
 
         $user->save();
@@ -138,7 +138,7 @@ class CrudUserController extends Controller
         $user_id = $request->get('id');
         $user = User::destroy($user_id);
 
-        return redirect("list")->withSuccess('Delete Done');
+        return redirect()->route('users.list')->with('status', 'Đã Xóa User! ID: ' . $user_id);
     }
 
     public function logout(Request $request)

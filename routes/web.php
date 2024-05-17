@@ -25,16 +25,23 @@ use App\Http\Controllers\DesktopController;
 Route::get('signup', [CrudUserController::class, 'signup'])->name('signup');
 Route::post('signup', [CrudUserController::class, 'postUser'])->name('user.postUser');
 
-// Personal Page
-Route::get('/users/view', [CrudUserController::class, 'viewUser'])->name('users.view');
-Route::get('/users/update', [CrudUserController::class, 'updateUser'])->name('users.updateForm');
-
 // Log in
 Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 
 // Log Out
 Route::post('/logout', [CrudUserController::class, 'logout'])->name('logout');
+
+// Personal Page
+Route::get('/users/view', [CrudUserController::class, 'viewUser'])->name('users.view');
+Route::get('/users/update', [CrudUserController::class, 'updateUser'])->name('users.updateForm');
+
+// CRUD Users
+Route::prefix('admin/')->group(function () {
+    Route::get('/users', [CrudUserController::class, 'listUser'])->name('users.list');
+    Route::get('/users/delete', [CrudUserController::class, 'deleteUser'])->name('users.delete');
+    Route::post('/users/update', [CrudUserController::class, 'postUpdateUser'])->name('users.update');
+});
 
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -46,13 +53,6 @@ Route::get('/products/earphones', [HomeController::class, 'showEarphones'])->nam
 Route::get('/products/screens', [HomeController::class, 'showScreens'])->name('products.screens');
 Route::get('/search', [HomeController::class, 'search'])->name('search.products');
 Route::get('/product/{productType}/{id}', [HomeController::class, 'showProductDetail'])->name('product.view');
-
-// CRUD Users
-Route::prefix('admin/')->group(function () {
-    Route::get('/users', [CrudUserController::class, 'listUser'])->name('users.list');
-    Route::get('/users/delete', [CrudUserController::class, 'deleteUser'])->name('users.delete');
-    Route::post('/users/update', [CrudUserController::class, 'postUpdateUser'])->name('users.update');
-});
 
 // CRUD Phone
 Route::prefix('admin/phones')->group(function () {

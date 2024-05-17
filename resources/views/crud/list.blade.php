@@ -4,6 +4,9 @@
     <section class="user-list">
         <div class="container">
             <h2>Quản Trị Tài Khoản</h2>
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">{{ session('status') }}</div>
+            @endif
             <table>
                 <thead>
                 <tr>

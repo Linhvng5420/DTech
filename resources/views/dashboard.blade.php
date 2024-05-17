@@ -17,47 +17,48 @@
     <!-- Title -->
     <p>D-Tech</p>
 
-    <!-- Hàng 1 -->
-    <!-- Users -->
-    <a href="{{ route('login') }}">Đăng Nhập</a>
-    <a href="{{ route('signup') }}">Đăng Ký</a>
-
     <!-- Home -->
     <a href="{{ route('home') }}">Home</a>
-
-    <!-- User -->
-    {{--    <a href="{{ route('users.view', ['id' => Auth::user()->id]) }}">Trang Cá Nhân</a>--}}
-    <a href="">Trang Cá Nhân</a>
 
     <!-- Cart -->
     <a href="#">Giỏ Hàng</a>
 
-    <!-- CRUD -->
-    <div class="dropdown">
-        <a href="#">Quản Trị</a>
-        <div class="dropdown-content">
-            <div class="dropdown-submenu">
-                <a>Sản Phẩm</a>
-                <div class="dropdown-submenu-content">
-                    <a href="{{route('desktop.all')}}">Desktop</a>
-                    <a href="{{route('admin.earphone.index')}}">EarPhone</a>
-                    <a href="{{route('laptop.all')}}">Laptop</a>
-                    <a href="{{ route('admin.phone.index') }}">Phone</a>
-                    <a href="{{route('admin.mouse.index')}}">Mouse</a>
-                    <a href="{{route('admin.screen.index')}}">Screen</a>
+    @guest
+        <!-- Users -->
+        <a href="{{ route('login') }}">Đăng Nhập</a>
+        <a href="{{ route('signup') }}">Đăng Ký</a>
+    @else
+        <!-- Trang Cá Nhân -->
+        <a href="{{ route('users.view', ['id' => Auth::user()->id]) }}">Trang Cá Nhân</a>
+
+        <!-- CRUD -->
+        @if(Auth::user()->role == 'admin')
+            <div class="dropdown">
+                <a href="#">Quản Trị</a>
+                <div class="dropdown-content">
+                    <div class="dropdown-submenu">
+                        <a>Sản Phẩm</a>
+                        <div class="dropdown-submenu-content">
+                            <a href="{{route('desktop.all')}}">Desktop</a>
+                            <a href="{{route('admin.earphone.index')}}">EarPhone</a>
+                            <a href="{{route('laptop.all')}}">Laptop</a>
+                            <a href="{{ route('admin.phone.index') }}">Phone</a>
+                            <a href="{{route('admin.mouse.index')}}">Mouse</a>
+                            <a href="{{route('admin.screen.index')}}">Screen</a>
+                        </div>
+                    </div>
+                    <a href="{{ route('users.list') }}">User</a>
                 </div>
             </div>
-            <a href="{{ route('users.list') }}">User</a>
-        </div>
-    </div>
+        @endif
 
-    {{--Đăng Xuất--}}
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
-
-    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng
-        Xuất</a>
+        <!-- Đăng Xuất -->
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        <a href="{{ route('logout') }}"
+           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng Xuất</a>
+    @endguest
 </nav>
 
 <!-- Chỉ hiển thụi subnav khi ở trang sp-->
