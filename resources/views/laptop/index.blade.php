@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h3>LAPTOP CRUD</h3>
-                        <a href="{{ route('laptop.add') }}" class="btn btn-primary">Thêm DeskTop</a>
+                        <a href="{{ route('laptop.add') }}" class="btn btn-primary">Thêm LapTop</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">

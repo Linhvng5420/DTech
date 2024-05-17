@@ -96,10 +96,10 @@
     <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
         <h2><strong>Team D</strong></h2>
         <div class="footer-links" style="margin-top: 10px;">
-            <a href="/about" style="color: #ccc; text-decoration: none; margin: 0 15px;">About Us</a>
-            <a href="/contact" style="color: #ccc; text-decoration: none; margin: 0 15px;">Contact</a>
-            <a href="/privacy" style="color: #ccc; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
-            <a href="/terms" style="color: #ccc; text-decoration: none; margin: 0 15px;">Terms of Service</a>
+            <a href="{{ url('/about') }}" style="color: #ccc; text-decoration: none; margin: 0 15px;">About Us</a>
+            <a href="" style="color: #ccc; text-decoration: none; margin: 0 15px;">Contact</a>
+            <a href="" style="color: #ccc; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
+            <a href="" style="color: #ccc; text-decoration: none; margin: 0 15px;">Terms of Service</a>
         </div>
         <div class="social-media" style="margin-top: 15px;">
             <a href="https://facebook.com" target="_blank" style="color: #ccc; text-decoration: none; margin: 0 10px;">

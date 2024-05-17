@@ -17,8 +17,8 @@
                     <p><strong>Màu Khác:</strong></p>
 
                     <div
-                        style="margin-left: 100px; margin-top: -46px; margin-left: 100px; padding: 5px; border: 2px double green; border-radius: 15px;
-                        width: 400px; align-items: center; display: flex;  justify-content: center; background-color: lightgray;">
+                        style="margin-left: 100px; margin-top: -46px; margin-left: 100px; padding: 5px; border: 1px double green; border-radius: 15px;
+                        width: 650px; align-items: center; display: flex;  justify-content: center; background-color: #f0f4f9;">
                         <div v-for="color in colors" :key="color" style="display: inline-block; margin-right: 5px;">
                             <button class="btn btn-m rounded-circle"
                                     :style="{ backgroundColor: color, width: '25px', height: '25px' }"
@@ -48,13 +48,9 @@
 
         <div>
             <!--Nút Giỏ Hàng (Chưa action)-->
-            <form action="#" method="POST">
-                @csrf
-                <input type="hidden" name="product_id" value="{{ $product->id }}">
-                <button type="submit" class="btn btn-primary btn-sm float-right">
-                    <i class="fas fa-plus"></i> Thêm vào giỏ hàng
-                </button>
-            </form>
+            <button class="btn btn-primary btn-sm float-right">
+                <i class="fas fa-plus"></i> Thêm vào giỏ hàng
+            </button>
 
             <script>
                 var app = new Vue({
