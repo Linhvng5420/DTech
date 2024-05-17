@@ -92,7 +92,35 @@
     </script>
 @endif
 
-<footer><strong>Team D</strong></footer>
+<footer style="background-color: #333; color: white; padding: 20px 0;">
+    <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <h2><strong>Team D</strong></h2>
+        <div class="footer-links" style="margin-top: 10px;">
+            <a href="/about" style="color: #ccc; text-decoration: none; margin: 0 15px;">About Us</a>
+            <a href="/contact" style="color: #ccc; text-decoration: none; margin: 0 15px;">Contact</a>
+            <a href="/privacy" style="color: #ccc; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
+            <a href="/terms" style="color: #ccc; text-decoration: none; margin: 0 15px;">Terms of Service</a>
+        </div>
+        <div class="social-media" style="margin-top: 15px;">
+            <a href="https://facebook.com" target="_blank" style="color: #ccc; text-decoration: none; margin: 0 10px;">
+                Facebook
+            </a>
+            <a href="https://twitter.com" target="_blank" style="color: #ccc; text-decoration: none; margin: 0 10px;">
+                Twitter
+            </a>
+            <a href="https://instagram.com" target="_blank" style="color: #ccc; text-decoration: none; margin: 0 10px;">
+                Instagram
+            </a>
+            <a href="https://linkedin.com" target="_blank" style="color: #ccc; text-decoration: none; margin: 0 10px;">
+                LinkedIn
+            </a>
+        </div>
+        <div class="copyright" style="margin-top: 20px;">
+            <p>&copy; 2024 D-Tech. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
@@ -102,11 +130,11 @@
     }
 
     .navbar {
+        background-color: #f0f4f9;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 5% 2% 5%;
-        border: 1px solid black;
+        margin-bottom: 5px;
         position: relative;
     }
 
@@ -115,13 +143,13 @@
         padding: 5px;
         font-size: 30px;
         font-weight: bold;
-        color: red;
+        color: #5cb85c;
         position: absolute;
         left: 10px;
     }
 
     .navbar a {
-        color: black;
+        color: #5f6368;
         text-decoration: none;
         padding: 10px 20px;
         font-weight: bold;
@@ -135,8 +163,8 @@
 
     footer {
         display: grid;
-        margin: 1% 5%;
         padding: 1%;
+        margin-top: 15px;
         border: 1px solid black;
         justify-items: center;
     }
