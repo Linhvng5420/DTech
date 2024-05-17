@@ -109,3 +109,8 @@ Route::post('add-desktops', [DesktopController::class, 'store'])->name('desktop.
 Route::get('edit-desktop/{id}', [DesktopController::class, 'edit'])->name('desktop.edit');
 Route::post('update-desktop/{id}', [DesktopController::class, 'update'])->name('desktop.update');
 Route::get('desktop/delete/{id}', [DesktopController::class, 'delete'])->name('desktop.delete');
+
+// About US
+Route::get('/about', function () {
+    return view('aboutus');
+});
